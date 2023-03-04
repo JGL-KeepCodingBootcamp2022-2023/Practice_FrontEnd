@@ -1,0 +1,16 @@
+.navbar {
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+#login {
+    grid-column: 5;
+    grid-row: 1;
+}
+#register{
+    grid-column: 6;
+    grid-row: 1;
+}

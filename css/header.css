@@ -1,0 +1,30 @@
+@import url('https://fonts.cdnfonts.com/css/ananda-2');
+
+img {
+    object-fit: cover;
+    width: 400%;
+    margin-top: 25px
+}
+
+header {
+    font-family: 'Ananda', 'Ananda Black';
+    font-size: 5em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 10px;
+}
+
+.headerText {
+background-color: aqua;
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
+
+.headerImg {
+    background-color: azure;
+    grid-column: 5 / 6;
+    grid-row: 1;
+}
