@@ -6,9 +6,14 @@
     <meta name="description" content="Find and buy the second-hand article thah you need or sell all you don´t use any more.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/spinner.css" rel="stylesheet">
+    <link href="css/addSection.css" rel="stylesheet">
+    <link href="./add-list/addStyle.css"rel="stylesheet">
+    <link href="./notifications/notificationStyle.css" rel="stylesheet">
     <title>AlaPop</title>
 </head>
 <body>
@@ -17,7 +22,7 @@
             <div id="headerText">
                 <h1>AlaPop</h1>
             </div>
-            <div id="headerImg"></div>
+            <div id="headerImg">
                 <img src="img/Alapop.png" alt="Logo de AlaPop. Carita picarona estilo emoji tapándose la boca mientras mira hacia arriba">    
             </div>
         </div>
@@ -28,7 +33,14 @@
             <button id="register">Register</button>
         </div>
     </navbar>
-    <section>Aquí iran los anuncios colocados en filas de dos. Usar grid de dos columnas. Añadimos artículos dinámicamente según se avanza en el scroll.</section>
+    <section class="notifications"></section>
+    <section class="adds-list">Aquí iran los anuncios colocados en filas de dos.
+        <p>Añadimos artículos dinámicamente según se avanza en el scroll.</p>
+
+    </section>
     <section>Si el logeo es exitoso, mostrar botón de crear auncio</section>
+    
+    
+    <script type="module" src="/index.js"></script>
 </body>
 </html>

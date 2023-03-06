@@ -1,0 +1,63 @@
+ç
+.goodNotifications {
+    display:flex;
+    position: absolute;
+    margin-top: -65px;
+    margin-left: 200px;
+    
+    background-color: lightgreen;
+    color: darkgreen;
+    border: solid 1px darkgreen;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-left: 5px;
+    width: 250px;
+}
+
+.badNotifications {
+    display:flexbox;
+    position: absolute;
+    align-items: center;
+    margin-left: 35%;
+
+    background-color: rgb(245, 119, 119);
+    color: rgb(62, 1, 1);
+    border: solid 2px rgb(62, 1, 1);
+    border-radius: 15px;
+    width: 250px;
+}
+
+.neutralNotifications{
+    display:flex;
+    position: absolute;
+    margin-top: -65px;
+    margin-left: 200px;
+    
+    background-color: lightsalmon;
+    color: rgb(218, 64, 12);
+    border: solid 2px rgb(218, 64, 12);
+    border-radius: 15px;
+    width: 250px;
+}
+
+.notificationButtom {
+    color: black;
+    display: inline-block;
+    text-align: right;
+    margin-top: 0;
+    margin-right: 5px;
+    padding-right: 0;
+    width: 100%;
+}
+.notificationButtom p {
+    margin: 0;
+    padding-right: 0;
+}
+.notificationText{
+    display: inline-block;
+    margin-top: 0;
+}
+
+.notificationText p{
+    margin-top: 0;
+}

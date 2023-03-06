@@ -1,0 +1,15 @@
+.adds-list {
+    background-color: rgb(246, 234, 211);
+    border-radius: 25px;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.spinnerView {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}

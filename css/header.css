@@ -2,13 +2,14 @@
 
 img {
     object-fit: cover;
-    width: 400%;
-    margin-top: 25px
+    width: 250px;
 }
 
 header {
+
     font-family: 'Ananda', 'Ananda Black';
-    font-size: 5em;
+    font-size: 3em;
+
 }
 
 .container {
@@ -18,7 +19,6 @@ header {
 }
 
 .headerText {
-background-color: aqua;
     grid-column: 1 / 4;
     grid-row: 1;
 }
