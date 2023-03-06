@@ -1,9 +1,9 @@
-ç
+
 .goodNotifications {
     display:flex;
     position: absolute;
-    margin-top: -65px;
-    margin-left: 200px;
+    align-items: center;
+    margin-left: 35%;
     
     background-color: lightgreen;
     color: darkgreen;
@@ -30,8 +30,8 @@
 .neutralNotifications{
     display:flex;
     position: absolute;
-    margin-top: -65px;
-    margin-left: 200px;
+    align-items: center;
+    margin-left: 35%;
     
     background-color: lightsalmon;
     color: rgb(218, 64, 12);

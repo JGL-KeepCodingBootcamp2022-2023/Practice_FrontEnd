@@ -33,7 +33,8 @@ function hideSpinner(addListElement) {
   }
 
 function drawAdds(adds, addListElement) {
-    for (const add of adds) {          
+    for (const add of adds) {       
+   
         const newAddElement = buildAddView(add);
         addListElement.appendChild(newAddElement); //Añade al DOM, concretamente a section class tweet-list
     }
