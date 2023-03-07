@@ -1,7 +1,6 @@
-import { getAdds } from './adds.js' // De aquí vienen los datos
+import { getAdds } from './adds.js'
 import { buildAddView, buildSpinnerView } from './addsView.js'
 
-//Obtener el array de anuncios
 export async function addsListController(addListElement) {
     //Ruleta de carga
     addListElement.classList.replace('adds-list', 'spinnerView')
@@ -19,7 +18,7 @@ export async function addsListController(addListElement) {
             dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
-        dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde' }, addListElement)
+        dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
 
     }finally {
         hideSpinner(addListElement)
@@ -31,9 +30,8 @@ function hideSpinner(addListElement) {
     addListElement.classList.replace('spinnerView', 'adds-list')
   }
 
-function drawAdds(adds, addListElement) {                   //Genera HTML que pinta los anuncios
+function drawAdds(adds, addListElement) {                   
     for (const add of adds) {       
-   
         const newAddElement = buildAddView(add);
         addListElement.appendChild(newAddElement);          
     }

@@ -1,7 +1,7 @@
-export function buildAddView(product) {
+export function buildAddView(add) {
     const newAddElement = document.createElement('products');
     newAddElement.classList.product('product')
-    const addDate = new Date(product.date)
+    //const addDate = new Date(product.date)
 
     newAddElement.innerHTML = `
         <div class="add">
@@ -27,7 +27,7 @@ export function buildAddView(product) {
             </div>
             <div class="product-img">
                 <img src="${product.photo}">            
-                <p>Fecha de creación: ${addDate.toISOString()}</p>
+                <!--<p>Fecha de creación: ${addDate.toISOString()}</p>-->
             </div>
         </div>
         `;
