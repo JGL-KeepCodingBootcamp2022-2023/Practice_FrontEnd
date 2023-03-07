@@ -1,18 +1,24 @@
 import { buildNotificationsView } from './notificationsView.js'
 
 export function notificationController(notificationsElement) {
-    function showMessage(message) {
+    function showMessage(detail) {
         
-        if (message.startsWith('No hemos podido')){
-            notificationsElement.classList.replace('notifications', 'badNotifications')
-        } else if (message.startsWith('No hay')) {
-            notificationsElement.classList.replace('notifications', 'neutralNotifications')
+        if (detail.isError){
+            notificationsElement.classList.add('goodNotifications')
         } else {
-            notificationsElement.classList.replace('notifications', 'goodNotifications')
+            notificationsElement.classList.add('badNotifications')
         }
 
-        notificationsElement.innerHTML = buildNotificationsView(message)
+        notificationsElement.innerHTML = buildNotificationsView(detail.message)
+
+        const closeNotification = notificationsElement.querySelector('#closeNotification')
+        closeNotification.addEventListener('click', () => closeNotificationWindow(notificationsElement))
     }
 
     return showMessage
+}
+
+function closeNotificationWindow(notificationsElement){
+    notificationsElement.classList.add('hide')
+    notificationsElement.innerHTML = '';
 }

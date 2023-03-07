@@ -1,4 +1,3 @@
-
 export function buildAddView(product) {
     const newAddElement = document.createElement('products');
     newAddElement.classList.product('product')

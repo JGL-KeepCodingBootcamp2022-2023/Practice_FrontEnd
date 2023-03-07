@@ -27,17 +27,8 @@
     width: 250px;
 }
 
-.neutralNotifications{
-    display:flex;
-    position: absolute;
-    align-items: center;
-    margin-left: 35%;
-    
-    background-color: lightsalmon;
-    color: rgb(218, 64, 12);
-    border: solid 2px rgb(218, 64, 12);
-    border-radius: 15px;
-    width: 250px;
+.hide{
+    display: none;
 }
 
 .notificationButtom {

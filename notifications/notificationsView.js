@@ -1,6 +1,6 @@
 export function buildNotificationsView(message) {
     return `<div>
-    <div class="notificationButtom" >
+    <div class="notificationButtom">
         <p id="closeNotification">[x]</p>
     </div>
     <div class="notificationText">  

@@ -6,22 +6,21 @@ export async function addsListController(addListElement) {
     //Ruleta de carga
     addListElement.classList.replace('adds-list', 'spinnerView')
     addListElement.innerHTML = buildSpinnerView(); 
-
     let adds = [];
         
     try {
         adds = await getAdds();
 
-        dispatchCustomEvent('Los anuncios se han cargado correctamente', addListElement)
+        dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
 
         // Mensaje de carga correcta de anuncios
         if (adds.length >0) {
             drawAdds(adds, addListElement) //Genera HTML que pinta los anuncios
         } else {
-            dispatchCustomEvent('No hay anuncios disponibles, todavía...', addListElement)
+            dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
-        dispatchCustomEvent('No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde', addListElement)
+        dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde' }, addListElement)
     }finally {
         hideSpinner(addListElement)
     }
@@ -40,11 +39,10 @@ function drawAdds(adds, addListElement) {
     }
 }
 
-function dispatchCustomEvent(message, addListElement){
-    let typeMessage = '';
+function dispatchCustomEvent(details, addListElement){
     const event = new CustomEvent('newNotification', {
         detail: {
-            message: message
+            message: details
         }
     })
 
