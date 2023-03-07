@@ -13,38 +13,36 @@ export async function addsListController(addListElement) {
 
         dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
 
-        // Mensaje de carga correcta de anuncios
         if (adds.length >0) {
-            drawAdds(adds, addListElement) //Genera HTML que pinta los anuncios
+            drawAdds(adds, addListElement) 
         } else {
             dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
         dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde' }, addListElement)
+
     }finally {
         hideSpinner(addListElement)
     }
 }
 
-function hideSpinner(addListElement) {
+function hideSpinner(addListElement) {                      
     addListElement.innerHTML = '';
     addListElement.classList.replace('spinnerView', 'adds-list')
   }
 
-function drawAdds(adds, addListElement) {
+function drawAdds(adds, addListElement) {                   //Genera HTML que pinta los anuncios
     for (const add of adds) {       
    
         const newAddElement = buildAddView(add);
-        addListElement.appendChild(newAddElement); //Añade al DOM, concretamente a section class tweet-list
+        addListElement.appendChild(newAddElement);          
     }
 }
 
 function dispatchCustomEvent(details, addListElement){
     const event = new CustomEvent('newNotification', {
-        detail: {
-            message: details
-        }
+        detail: details
     })
 
-    addListElement.dispatchEvent(event)   //Lanza el evento customizado que hemos creado justo arriba en esta función
+    addListElement.dispatchEvent(event)                     //Lanza el evento customizado que hemos creado
 }
