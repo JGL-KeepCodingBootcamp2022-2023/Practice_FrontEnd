@@ -6,16 +6,13 @@ img {
 }
 
 header {
-
     font-family: 'Ananda', 'Ananda Black';
     font-size: 3em;
-
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .headerText {

@@ -1,5 +1,5 @@
 .adds-list {
-    background-color: rgb(246, 234, 211);
+    background-color: beige;
     border-radius: 25px;
     margin: 10px;
     display: grid;
@@ -9,7 +9,7 @@
 }
 
 .spinnerView {
-    background-color: white;
+    background-color:  white;
     display: flex;
     justify-content: center;
 }

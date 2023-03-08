@@ -9,6 +9,7 @@ export function loginController(loginElement) {
 
     const emailElement = loginElement.querySelector('#username')
     const passwordElement = loginElement.querySelector('#password')
+   
 
     if (!isMailValid(emailElement.value)) {
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El mail no está escrito correctamente')

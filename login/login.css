@@ -28,13 +28,15 @@ button {
 }
 
 .rigthSide {
+    text-align: center;
     display: inline-block;
     justify-content: space-around;
     background-color: beige;
     border-radius: 15px;
-    margin-top: 25px;
+    margin-top: 20px;
     margin-right: 10px;
-    margin-bottom: 25px;   
+    margin-bottom: 20px;
+    padding-bottom: 15px;  
 }
 
 .rigthSide p {
@@ -43,6 +45,11 @@ button {
 
 .leftSide {
     text-align: center;
+}
+
+#textLogin {
+    font-style: oblique;
+    text-decoration: underline;
 }
 
 #logUser {

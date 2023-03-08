@@ -5,7 +5,7 @@ import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 export async function addsListController(addListElement) {
     //Ruleta de carga
     addListElement.classList.replace('adds-list', 'spinnerView')
-    addListElement.innerHTML = buildSpinnerView(); 
+    addListElement.innerHTML = buildSpinnerView(addListElement); 
     let adds = [];
         
     try {

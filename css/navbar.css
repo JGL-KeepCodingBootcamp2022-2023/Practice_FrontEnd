@@ -13,13 +13,16 @@
 #loginLink {
     grid-column: 6;
     grid-row: 1;
+    text-align: center;
 }
 #signupLink{
     grid-column: 5;
     grid-row: 1;
+    text-align: center;
 }
 
 #createNewAddLink {
     grid-column: 4;
     grid-row: 1;
+    text-align: center;
 }
