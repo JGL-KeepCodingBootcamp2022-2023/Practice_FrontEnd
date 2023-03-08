@@ -14,8 +14,6 @@
 }
 
 .badNotifications {
-    
-    /*margin-left: 35%;*/
     background-color: rgb(245, 119, 119);
     color: rgb(62, 1, 1);
     border: solid 2px rgb(62, 1, 1);
@@ -40,6 +38,7 @@
     margin: 0;
     padding-right: 0;
 }
+
 .notificationText{
     text-align: center;
     margin-top: 0px;
