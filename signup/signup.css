@@ -1,0 +1,42 @@
+label{
+  display: inline-block;
+  width: 80px;
+  margin-bottom: 10px;
+}
+button {
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.infoContainer {
+    border: solid 1px rgb(247, 211, 66);
+    border-radius: 15px;
+    margin-top:5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.rigthSide {
+    display: inline-block;
+    justify-content: space-around;
+    background-color: beige;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;   
+}
+
+.rigthSide p {
+    margin-bottom: 10px;
+}
+.leftSide {
+    text-align: center;
+}
+
+#createUser {
+    
+    padding-top: 10px;
+    margin-left: 25px;
+}

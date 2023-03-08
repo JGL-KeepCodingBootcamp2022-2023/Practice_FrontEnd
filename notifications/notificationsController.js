@@ -1,19 +1,30 @@
+import { pubSub } from '../pubSub.js'
 import { buildNotificationsView } from './notificationsView.js'
 
 export function notificationController(notificationsElement) {
-    function showMessage(detail) {
+
+    function showMessage(message) {
         
-        if (detail.isError){
+        if (message.isError){
             notificationsElement.classList.add('goodNotifications')
         } else {
             notificationsElement.classList.add('badNotifications')
         }
+        
+        notificationsElement.innerHTML = buildNotificationsView(message)
 
-        notificationsElement.innerHTML = buildNotificationsView(detail.message)
+        setTimeout (() => {
+            notificationsElement.classList.add('hide')
+            notificationsElement.innerHTML =  ''
+        }, 5000);
 
         const closeNotification = notificationsElement.querySelector('#closeNotification')
         closeNotification.addEventListener('click', () => closeNotificationWindow(notificationsElement))
     }
+
+    pubSub.subscribe(pubSub.TOPICS.SHOW_NOTIFICATION, (message) => {
+        showMessage(message)
+    })
 
     return showMessage
 }

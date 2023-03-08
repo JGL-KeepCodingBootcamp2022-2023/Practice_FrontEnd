@@ -1,5 +1,6 @@
 import { getAdds } from './adds.js'
-import { buildAddView, buildSpinnerView } from './addsView.js'
+import { buildAddView } from './addsView.js'
+import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 
 export async function addsListController(addListElement) {
     //Ruleta de carga
@@ -25,10 +26,10 @@ export async function addsListController(addListElement) {
     }
 }
 
-function hideSpinner(addListElement) {                      
+/*function hideSpinner(addListElement) {                      
     addListElement.innerHTML = '';
     addListElement.classList.replace('spinnerView', 'adds-list')
-  }
+  }*/
 
 function drawAdds(adds, addListElement) {                   
     for (const add of adds) {       

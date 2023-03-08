@@ -4,7 +4,7 @@ export function buildNotificationsView(message) {
         <p id="closeNotification">[x]</p>
     </div>
     <div class="notificationText">  
-    <p>${message}</p>
+    <p id="messageText">${message}</p>
     </div>
 </div>`
 }

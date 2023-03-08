@@ -1,16 +1,25 @@
 .navbar {
-    background-color: rgb(246, 234, 211);
+    background-color: beige;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
 }
 
-#login {
+#loginLink {
+    grid-column: 6;
+    grid-row: 1;
+}
+#signupLink{
     grid-column: 5;
     grid-row: 1;
 }
-#register{
-    grid-column: 6;
+
+#createNewAddLink {
+    grid-column: 4;
     grid-row: 1;
 }

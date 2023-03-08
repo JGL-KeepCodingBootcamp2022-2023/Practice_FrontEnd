@@ -35,9 +35,9 @@ export function buildAddView(add) {
     return newAddElement;
 }
 
-export function buildSpinnerView() {
+/*xport function buildSpinnerView() {
     return `<div class="spinner"><div></div><div></div><div></div></div>`
-  }
+  }*/
 
 /*export function buildErrorLoadingAdds() {
     return `<p class="load-error">Ha habido un problema cargando los anuncios. Inténtalo de nuevo más tarde</p>`

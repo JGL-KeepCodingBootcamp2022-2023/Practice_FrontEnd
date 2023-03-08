@@ -3,8 +3,7 @@
     display:flex;
     position: absolute;
     align-items: center;
-    margin-left: 35%;
-    
+    /*margin-left: 35%;*/
     background-color: lightgreen;
     color: darkgreen;
     border: solid 1px darkgreen;
@@ -15,11 +14,8 @@
 }
 
 .badNotifications {
-    display:flexbox;
-    position: absolute;
-    align-items: center;
-    margin-left: 35%;
-
+    
+    /*margin-left: 35%;*/
     background-color: rgb(245, 119, 119);
     color: rgb(62, 1, 1);
     border: solid 2px rgb(62, 1, 1);
@@ -37,7 +33,7 @@
     text-align: right;
     margin-top: 0;
     margin-right: 5px;
-    padding-right: 0;
+    padding-right: 2px;
     width: 100%;
 }
 .notificationButtom p {
@@ -45,10 +41,6 @@
     padding-right: 0;
 }
 .notificationText{
-    display: inline-block;
-    margin-top: 0;
-}
-
-.notificationText p{
-    margin-top: 0;
+    text-align: center;
+    margin-top: 0px;
 }

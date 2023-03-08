@@ -10,8 +10,10 @@
   <link href="css/header.css" rel="stylesheet">
   <link href="css/navbar.css" rel="stylesheet">
   <link href="css/spinner.css" rel="stylesheet">
-  <link href="css/signup.css" rel="stylesheet">
-  <title>Sign up</title>
+  <link href="login/login.css" rel="stylesheet">
+  <link href="notifications/notificationStyle.css" rel="stylesheet">
+
+  <title>Login</title>
 </head>
 <header>
   <div class="container">
@@ -25,33 +27,31 @@
 </header>
 <navbar>
   <div class = "navbar">
-      <a href="/" id="loginLink">Login</a>
+      <a href="/" id="signupLink">SignUp</a>
 
   </div>
 </navbar>
 <body>
-  <div class="infoCcontainer"> 
+  <div class="infoContainer">
     <div class="leftSide">
-      <h1>Hello new user!</h1>
-      <h3>Please fill the fields to access AlaPop and be able to buy and sell your items.</h3>
+      <h1>LOGIN</h1>
+      <p><b>¿New user?</b></p>
+      <p>Please <a href="/signup.html">Signup</a> to access AlaPop and be able to buy and sell your items.</p>
     </div>
     <div class="rigthSide">
-      <form id="createUser">
+      <form id="logUser">
         <label for="username">Email:</label>
         <input type="email" name="username" id="username" required><br>
-
-        
+       
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" minlength="6" required><br>
 
-        <label for="passwordConfirm">Password confirm:</label>
-        <input type="password" name="password-confirm" id="passwordConfirm" minlength="6" required><br>
-
-        <button type="submit">Crear usuario</button><br>
+        <button type="submit">Login</button><br>
       </form>
+
       <section class="notifications"></section>
     </div>
   </div>
-  <script type="module" src="./signup/index.js"></script>
+  <script type="module" src="./login/index.js"></script>
 </body>
 </html>
