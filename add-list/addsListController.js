@@ -22,8 +22,6 @@ export async function addsListController(addListElement) {
             //dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
-        console.log('No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
-        console.log(err)
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, err)
         //dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
 

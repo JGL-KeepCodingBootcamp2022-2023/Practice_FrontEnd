@@ -2,7 +2,7 @@ export function buildAddView(product) {
     const newAddElement = document.createElement('products');
     newAddElement.classList.add('product')
     //const addDate = new Date(product.date)
-    console.log(product)
+ 
     newAddElement.innerHTML = `   
         <div class="add">
         <div class="productInfo> 

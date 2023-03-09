@@ -5,7 +5,7 @@ export async function loginUser(email, password) {
     }
 
     //Consume el API sparrets utilizando el método POST y enviando los datos que ha introducido el usuario
-    const response = await fetch ('http://localhost:8000/api/login', {
+    const response = await fetch ('http://localhost:8000/auth/login', {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
