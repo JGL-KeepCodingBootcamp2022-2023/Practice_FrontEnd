@@ -1,20 +1,31 @@
 .add {
-    border: solid 2px lightgray;
+    border: solid 2px beige;
     border-radius: 10px;
     margin-bottom: 1rem;
     padding: 0.5rem;
   }
   
-  .add .user-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
   .add img {
-    width: 50px;
-    height: 50px;
+    max-width: 100px;
+    max-height: 150px;
   }
 
+  .productData h2{
+    text-align: center;
+    color: darkred;
+  }
+
+  #isSale {
+    font-weight: bold; 
+    text-transform: uppercase;
+  }
+
+.typeTag {
+  font-weight: bold;
+}
+
+.typeTag span {
+  font-weight: initial;
+}
 
   

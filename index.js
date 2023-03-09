@@ -9,7 +9,7 @@ addsListController(addListElement);                                             
 
 const showMessage = notificationController(notificationsElement);
 
-addListElement.addEventListener('newNotification', (event) => {
+/*addListElement.addEventListener('newNotification', (event) => {
     console.log('He recibido el evento!!!!', event.detail)
     showMessage(event.detail)
-});
+});*/

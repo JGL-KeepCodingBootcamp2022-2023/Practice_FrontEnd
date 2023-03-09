@@ -1,6 +1,7 @@
 import { getAdds } from './adds.js'
 import { buildAddView } from './addsView.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
+import { pubSub } from '../pubsub.js'
 
 export async function addsListController(addListElement) {
     //Ruleta de carga
@@ -11,25 +12,25 @@ export async function addsListController(addListElement) {
     try {
         adds = await getAdds();
 
-        dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
+        //dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
 
         if (adds.length >0) {
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             drawAdds(adds, addListElement) 
         } else {
-            dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
+            //dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
-        dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
+        console.log('No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
+        console.log(err)
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, err)
+        //dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
 
     }finally {
         hideSpinner(addListElement)
     }
 }
-
-/*function hideSpinner(addListElement) {                      
-    addListElement.innerHTML = '';
-    addListElement.classList.replace('spinnerView', 'adds-list')
-  }*/
 
 function drawAdds(adds, addListElement) {                   
     for (const add of adds) {       
@@ -38,10 +39,10 @@ function drawAdds(adds, addListElement) {
     }
 }
 
-function dispatchCustomEvent(details, addListElement){
+/*function dispatchCustomEvent(details, addListElement){
     const event = new CustomEvent('newNotification', {
         detail: details
     })
 
     addListElement.dispatchEvent(event)                     //Lanza el evento customizado que hemos creado
-}
+}*/

@@ -1,34 +1,26 @@
-export function buildAddView(add) {
+export function buildAddView(product) {
     const newAddElement = document.createElement('products');
-    newAddElement.classList.product('product')
+    newAddElement.classList.add('product')
     //const addDate = new Date(product.date)
-
-    newAddElement.innerHTML = `
+    console.log(product)
+    newAddElement.innerHTML = `   
         <div class="add">
-            <div class="user-info>    
-                <span>${product.user}</span>
-                <img src="${product.avatar}">
-            </div>   
-        <div class="product-info> 
+        <div class="productInfo> 
             <div class="product-name">
-                <p>${product.name}</p>
-            <div class = "product-tags">
-                <% if (${product.sale}) { %>
-                    <p>Precio de venta: <b><%=  ${product.price} %> €</b></p>
-                <% } else { %>
-                    <p>Se busca por: <b><%= ${product.price} %> €</b></p>
-                <% } %>
-                    <h3>Descripción:</h3>
-                    <p>${product.description}</p>
-                <div class = "type-tag">
-                    <p>Tags: "<%= ${anuncio.tag.join(', ')} %>" </p>
+                <h1>${product.name}</h1>
+            </div>
+            <div class = "productData">
+                <p> Se <span id="isSale" >${product.sale}</span> este producto por:</p>
+                <h2>${product.price} €</h2>
+                <div class = "typeTag">
+                    <p>Tags: <span>${product.tag.join(', ')}. </p>
                 </div>
-                <div>
             </div>
             <div class="product-img">
                 <img src="${product.photo}">            
-                <!--<p>Fecha de creación: ${addDate.toISOString()}</p>-->
+                <p>Fecha de creación: </p>
             </div>
+        </div>
         </div>
         `;
 

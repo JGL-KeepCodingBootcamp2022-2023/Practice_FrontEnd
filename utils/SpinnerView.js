@@ -1,10 +1,10 @@
 export function buildSpinnerView(element) {
-  console.log('Pongo el spinner')
-  return `<div class="spinner"><div></div><div></div><div></div></div>`
+  return `<div class="spinner" id="spinner"><div></div><div></div><div></div></div>`
 };
 
 export function hideSpinner(element) {     
-  console.log('se quita el spinner')                 
-  element.classList.replace('spinnerView', 'hide')
+  const byeSpinner = element.querySelector('#spinner')  
+  byeSpinner.parentNode.removeChild(byeSpinner)               
+  //element.classList.replace('spinnerView', 'hide')
   //element.innerHTML = '';
  };

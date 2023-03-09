@@ -1,5 +1,6 @@
 import { pubSub } from "../pubSub.js";
 import { createUser } from "./signup.js";
+import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 
 export function signupController(signupElement) {
 

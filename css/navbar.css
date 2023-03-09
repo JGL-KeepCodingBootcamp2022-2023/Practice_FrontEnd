@@ -1,3 +1,10 @@
+a {
+    color: rgb(210, 156, 5);
+    font-family: 'Ananda', 'Ananda Black';
+    font-style: italic;
+    text-decoration: none;
+}
+
 .navbar {
     background-color: beige;
     display: grid;
@@ -24,6 +31,12 @@
 
 #createNewAddLink {
     grid-column: 4;
+    grid-row: 1;
+    text-align: center;
+}
+
+#backHome{
+    grid-column: 1;
     grid-row: 1;
     text-align: center;
 }
