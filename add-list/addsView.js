@@ -6,7 +6,7 @@ export function buildAddView(product) {
     newAddElement.innerHTML = `   
         <div class="add">
         <div class="productInfo> 
-            <div class="product-name">
+            <div class="productName">
                 <h1>${product.name}</h1>
             </div>
             <div class = "productData">

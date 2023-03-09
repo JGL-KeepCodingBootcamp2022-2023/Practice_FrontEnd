@@ -28,6 +28,7 @@ export async function addsListController(addListElement) {
         //dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
 
     }finally {
+        addListElement.classList.replace('spinnerView', 'adds-list')
         hideSpinner(addListElement)
     }
 }

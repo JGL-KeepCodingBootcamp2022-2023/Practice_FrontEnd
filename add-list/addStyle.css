@@ -1,17 +1,29 @@
 .add {
+    display: block;
+    text-align: center;
     border: solid 2px beige;
     border-radius: 10px;
     margin-bottom: 1rem;
     padding: 0.5rem;
+    height: 500px;
   }
-  
+  .productName {
+    text-align: center;
+  }
   .add img {
-    max-width: 100px;
-    max-height: 150px;
+    object-fit: cover;
+    width: fit-content;
+    height: 150px;
   }
 
   .productData h2{
-    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    /*margin-right: auto;*/
+    padding: 5px;
+    border-style: dashed;
+    border-radius: 5px;
+  
     color: darkred;
   }
 
