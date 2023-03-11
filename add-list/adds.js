@@ -5,5 +5,9 @@ export async function getAdds() {
     const response = await fetch(productsUrl); //Con este await gestionamos la promesa que devuelve el fetch
     const adds = await response.json(); //Con este await gestionamos la promesa que devuelve el response.json()
     
-    return adds
+    if(!response.ok) {
+        throw new Error('Error al identificar al usuari@ ')
+    }
+    
+    return adds, response
 }

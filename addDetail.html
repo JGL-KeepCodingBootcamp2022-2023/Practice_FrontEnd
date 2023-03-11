@@ -28,31 +28,12 @@
 <section>
   <div class = "navbar">
     <a href="/" id="backHome">Home</a>
-    <a href="/" id="signupLink">Signup</a>
-
+    <button id="closeSession"></button>
   </div>
 </section>
 <body>
-  <div class="infoContainer">
-    <div class="leftSide">
-      <h1 id="textLogin">LOGIN</h1>
-      <p><b>¿New user?</b></p>
-      <p>Please <a href="/signup.html">Signup</a> to access AlaPop and be able to buy and sell your items.</p>
-    </div>
-    <div class="rigthSide">
-      <form id="logUser">
-        <label for="username">Email:</label>
-        <input type="email" name="username" id="username" required><br>
-       
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" minlength="6" required><br>
-
-        <button type="submit">Login</button><br>
-      </form>
-      <section id="spinner"></section>
-      <section class="notifications"></section>
-    </div>
-  </div>
-  <script type="module" src="./login/index.js"></script>
+  <section class="addDetail"></section>
+  <section class="notifications"></section>
+  <script type="module" src="./addDetail/index.js"></script>
 </body>
 </html>

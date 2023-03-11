@@ -4,24 +4,26 @@ export function buildAddView(product) {
     //const addDate = new Date(product.date)
  
     newAddElement.innerHTML = `   
-        <div class="add">
-        <div class="productInfo> 
-            <div class="productName">
-                <h1>${product.name}</h1>
-            </div>
-            <div class = "productData">
-                <p> Se <span id="isSale" >${product.sale}</span> este producto por:</p>
-                <h2>${product.price} €</h2>
-                <div class = "typeTag">
-                    <p>Tags: <span>${product.tag.join(', ')}. </p>
+        <a href:"/addDetail.html?addId = ${product.id}">    
+            <div class="add">
+                <div class="productInfo> 
+                    <div class="productName">
+                        <h1>${product.name}</h1>
+                    </div>
+                    <div class = "productData">
+                        <p> Se <span id="isSale" >${product.sale}</span> este producto por:</p>
+                        <h2>${product.price} €</h2>
+                        <div class = "typeTag">
+                            <p>Tags: <span>${product.tag.join(', ')}. </p>
+                        </div>
+                    </div>
+                    <div class="product-img">
+                        <img src="${product.photo}">            
+                        <p>Fecha de creación: </p>
+                    </div>
                 </div>
             </div>
-            <div class="product-img">
-                <img src="${product.photo}">            
-                <p>Fecha de creación: </p>
-            </div>
-        </div>
-        </div>
+        </a>
         `;
 
     return newAddElement;

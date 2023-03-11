@@ -8,13 +8,14 @@ export async function addsListController(addListElement) {
     addListElement.classList.replace('adds-list', 'spinnerView')
     addListElement.innerHTML = buildSpinnerView(addListElement); 
     let adds = [];
-        
+     
     try {
         adds = await getAdds();
 
         //dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
-
+        
         if (adds.length >0) {
+            
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             drawAdds(adds, addListElement) 
         } else {
@@ -22,7 +23,8 @@ export async function addsListController(addListElement) {
             //dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, err)
+        console.log('No he podido cargar los anuncios')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
         //dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
 
     }finally {

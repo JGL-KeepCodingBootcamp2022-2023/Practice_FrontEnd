@@ -11,6 +11,8 @@ export function signupController(signupElement) {
     const emailElement = signupElement.querySelector('#username');
     const passwordElement = signupElement.querySelector('#password');
     const passwordConfirmElement = signupElement.querySelector('#passwordConfirm');
+    const spinnerElement = signupElement.querySelector('.notifications')
+    signupElement.buildSpinnerView(signupElement)
 
     if (isMailValid(emailElement.value) &&
         isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
@@ -21,6 +23,8 @@ export function signupController(signupElement) {
             //window.location = '/'
           } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, error.message)
+          }finally{
+            hideSpinner(signupElement)
           }
     }
   })
