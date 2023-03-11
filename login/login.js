@@ -9,7 +9,7 @@ export async function loginUser(email, password) {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
-            "Content-Type": "applicatin/json"
+            "Content-Type": "application/json"
         }
     })
     const logRes = await response.json(); //Con este await gestionamos la promesa que devuelve el response.json()
