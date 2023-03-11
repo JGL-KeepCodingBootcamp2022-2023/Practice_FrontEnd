@@ -1,0 +1,12 @@
+#closeSession {
+    background-color: inherit ;
+    color: rgb(210, 156, 5);
+    border: none;
+    font-family: 'Ananda', 'Ananda Black';
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 15px;
+    grid-column: 6;
+    grid-row: 1;
+    text-align: center;
+}

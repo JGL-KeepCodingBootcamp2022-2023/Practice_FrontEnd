@@ -12,11 +12,13 @@ export async function loginUser(email, password) {
             "Content-Type": "application/json"
         }
     })
+    
     const logRes = await response.json(); //Con este await gestionamos la promesa que devuelve el response.json()
+    
     //Gestión de la respuesta
     if(!response.ok) {
         throw new Error('Error al identificar al usuari@ ')
     }
 
-    return logRes
+    return logRes.accessToken
 }

@@ -1,28 +1,29 @@
 import { decodeToken } from '../utils/decodeToken.js'
 import { buildGreeting } from './userActionView.js'
 
-export function userActionsController(userActionElement) {
+export function userActionsController(userActionsElement) {
   const token = localStorage.getItem('token')
-  const closeSessionElement = userActionElement.querySelector('#closeSession')
+  
+  const closeSessionElement = userActionsElement.querySelector('#closeSession') //No me está enseñando el botón
 
   if (token) {
-    const loginLinkElement = userActionElement.querySelector('#loginLink')
-    const signupLinkElement = userActionElement.querySelector('#signupLink')
+    const loginLinkElement = userActionsElement.querySelector('#loginLink')
+    const signupLinkElement = userActionsElement.querySelector('#signupLink')
     loginLinkElement.remove()
     signupLinkElement.remove()
 
     const payload = decodeToken(token)
-    userActionElement.appendChild(buildGreeting(payload.username))
-
+    userActionsElement.appendChild(buildGreeting(payload.username))
     closeSessionElement.addEventListener('click', () => {
       localStorage.removeItem('token')
-      //TODO RULETA DE CARGA
-      //TODO NOTIFICATION OK
-      //TODO HIDE RULETA DE CARGA
       window.location.reload()
     })
+
   } else {
-    const createNewAddLink = userActionElement.querySelector('#createNewAddLink')
-    createNewAddLink.remove()
+    const createTweetLinkElement = userActionsElement.querySelector('#createNewAddLink')
+    createTweetLinkElement.remove()
+    closeSessionElement.remove()
   }
+
+
 }

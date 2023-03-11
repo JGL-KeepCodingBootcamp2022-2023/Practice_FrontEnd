@@ -1,7 +1,7 @@
 import { getAdds } from './adds.js'
 import { buildAddView } from './addsView.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
-import { pubSub } from '../pubsub.js'
+import { pubSub } from '../pubSub.js'
 
 export async function addsListController(addListElement) {
     //Ruleta de carga
@@ -15,16 +15,17 @@ export async function addsListController(addListElement) {
         //dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
         
         if (adds.length >0) {
-            
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
+            alert('Los anuncions se cargaron correctamente')
+            //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             drawAdds(adds, addListElement) 
         } else {
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
+            alert('NO hay anuncios disponibles')
+            //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
             //dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
-        console.log('No he podido cargar los anuncios')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
+        alert('no se han podido cargar los anuncios')
+        //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
         //dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
 
     }finally {
