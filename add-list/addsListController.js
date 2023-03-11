@@ -15,9 +15,10 @@ export async function addsListController(addListElement) {
         //dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
         
         if (adds.length >0) {
-            alert('Los anuncions se cargaron correctamente')
+            alert('Todos Los anuncios se cargaron correctamente')
             //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             drawAdds(adds, addListElement) 
+            console.log(adds.status)
         } else {
             alert('No hay anuncios disponibles')
             //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');

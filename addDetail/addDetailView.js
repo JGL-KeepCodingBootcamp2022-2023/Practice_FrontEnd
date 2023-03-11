@@ -23,7 +23,7 @@ export function buildAddDetail(product) {
                 <p>Fecha de creación: </p>
             </div>
         </div>
-        <button id="deleteAdd"Delete Add</button>
+        <button id="deleteAdd">Delete Add</button>
     </div>
 `
 }

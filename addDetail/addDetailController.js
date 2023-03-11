@@ -1,4 +1,4 @@
-import { getAddById } from './addDetail.js';
+import { deleteAdd, getAddById } from './addDetail.js';
 import { buildAddDetail } from './addDetailView.js';
 import { decodeToken } from '../utils/decodeToken.js';
 
@@ -27,10 +27,11 @@ export async function addDetailController(addDetailElement, addId) {
             const userInfo = decodeToken(token);
             
             if(add.userId === userInfo.userId) {
-                deleteButtonElement.addEventListener('click', (event) => {
+                deleteButtonElement.addEventListener('click', async () => {
                     const answer = confirm('¿Está segur@ de que desea borrar el anuncio?')
                     
                     if(answer){
+                        await deleteAdd(add.id)
                         //IR A SPARRET A BORRAR EL ADD
                         //TODO SPINNER
                         //TODO NOTIFICATION GOOD
@@ -44,6 +45,4 @@ export async function addDetailController(addDetailElement, addId) {
             }
         }
     }
-
-
 }
