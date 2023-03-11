@@ -17,16 +17,17 @@ export const createAddController = (createAddFormElement) => {
     
         try {
             //TODO SPINNER
-            await createAdd(addAvatar)
+            //await createAdd(addAvatar)
             await createAdd(addName)
-            await createAdd(addSelect)
-            await createAdd(addPrice)
-            await createAdd(addPhoto)
-            await createAdd(addDescription)
-            await createAdd(addTag)
+            //await createAdd(addSelect)
+            //await createAdd(addPrice)
+            //await createAdd(addPhoto)
+           // await createAdd(addDescription)
+           // await createAdd(addTag)
             //TODO NOTIFICATION GOOD
         } catch (error) {
             alert(error)
+            alert('no se ha podido crear el anuncio')
             //TODO NOTIFICATION BAD
         }finally {
             //TODO hidespiner

@@ -9,5 +9,5 @@ export async function getAdds() {
         throw new Error('Error al identificar al usuari@ ')
     }
     
-    return adds, response
+    return adds
 }

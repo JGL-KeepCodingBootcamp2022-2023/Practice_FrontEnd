@@ -19,7 +19,7 @@ export async function addsListController(addListElement) {
             //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             drawAdds(adds, addListElement) 
         } else {
-            alert('NO hay anuncios disponibles')
+            alert('No hay anuncios disponibles')
             //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
             //dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }

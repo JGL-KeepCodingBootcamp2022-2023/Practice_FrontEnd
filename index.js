@@ -4,11 +4,11 @@ import { userActionsController } from './userActions/userActionController.js'
 
 const addListElement = document.querySelector('.adds-list');                    //Accedemos al DOM sólo una vez y desde fuera del controlador
 const notificationsElement = document.querySelector('.notifications');
-const userActionElement = document.querySelector('.userActions')
+const userActionsElement = document.querySelector('.userActions')
 
 notificationController(notificationsElement);
 addsListController(addListElement);
-userActionsController(userActionElement);                                            //Recibe un nodo del DOM del cual se tiene que encargar.
+userActionsController(userActionsElement);                                            //Recibe un nodo del DOM del cual se tiene que encargar.
 
 const showMessage = notificationController(notificationsElement);
 
