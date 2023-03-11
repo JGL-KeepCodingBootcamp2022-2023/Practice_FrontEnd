@@ -4,7 +4,7 @@ export function buildAddView(product) {
     //const addDate = new Date(product.date)
  
     newAddElement.innerHTML = `   
-        <a href:"/addDetail.html?addId = ${product.id}">    
+        <a href="/addDetail.html?addId=${product.id}">    
             <div class="add">
                 <div class="productInfo> 
                     <div class="productName">

@@ -3,6 +3,7 @@ import { buildAddDetail } from './addDetailView.js';
 import { decodeToken } from '../utils/decodeToken.js';
 
 export async function addDetailController(addDetailElement, addId) {
+    
     try {
         //TODO To put a spinner
         const add = await getAddById(addId);

@@ -1,9 +1,9 @@
-export function buildAddDetail(add) {
+export function buildAddDetail(product) {
     return `
     <div class="add">
         <div class="productInfo> 
             <div class="userInfo">
-                <span>>${product.avatar} ${product.username}</span>
+                <span><img src="${product.avatar}" alt="Avatar del usuario"> - ${product.username}</span>
             </div>
             <div class="productName">
                 <h1>${product.name}</h1>
@@ -23,7 +23,7 @@ export function buildAddDetail(add) {
                 <p>Fecha de creación: </p>
             </div>
         </div>
-        <button id="deleteAdd">Borrar anuncio</button>
+        <button id="deleteAdd"Delete Add</button>
     </div>
-    `
+`
 }
