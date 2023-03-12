@@ -1,8 +1,8 @@
 import { addDetailController } from './addDetailController.js'
-import { notificationController } from '../notifications/notificationsController.js'
-import { userActionsController } from '../userActions/userActionController.js';
+//import { notificationController } from '../notifications/notificationsController.js'
+//import { userActionsController } from '../userActions/userActionController.js';
 
-const userActionsElement = document.querySelector('.userActions')
+//const userActionsElement = document.querySelector('.userActions')
 
 //Reading queryparam from url
 const params = new URLSearchParams(window.location.search);
@@ -17,4 +17,4 @@ if (!addId) {                       //Validation that addId exists
     addDetailController(addDetailElement, addId)
 }
 
-userActionsController(userActionsElement);
+//userActionsController(userActionsElement);

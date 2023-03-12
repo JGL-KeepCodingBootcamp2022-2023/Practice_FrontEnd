@@ -2,13 +2,7 @@ import { deleteAdd, getAddById } from './addDetail.js';
 import { buildAddDetail } from './addDetailView.js';
 import { decodeToken } from '../utils/decodeToken.js';
 
-export async function addDetailController(addDetailElement, addId) { 
-    
-    addDetailElement.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        
-  
-
+export async function addDetailController(addDetailElement, addId) {  
         try {
             //TODO To put a spinner
             const add = await getAddById(addId);
@@ -49,5 +43,6 @@ export async function addDetailController(addDetailElement, addId) {
                 }
             }
         }
-    })
+    
+    
 }
