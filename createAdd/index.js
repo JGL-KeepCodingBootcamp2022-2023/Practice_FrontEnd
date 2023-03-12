@@ -9,6 +9,8 @@ if(!token) {                    //Refuse acces to createAdd webpage without logi
 } else {
     const createAddFormElement = document.querySelector('#createAddForm');
     createAddController(createAddFormElement)
-}
+};
 
-userActionsController(userActionsElement)
+userActionsController(userActionsElement);
+
+

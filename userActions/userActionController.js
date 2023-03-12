@@ -20,8 +20,8 @@ export function userActionsController(userActionsElement) {
     })
 
   } else {
-    const createTweetLinkElement = userActionsElement.querySelector('#createNewAddLink')
-    createTweetLinkElement.remove()
+    const createAddLinkElement = userActionsElement.querySelector('#createNewAddLink')
+    createAddLinkElement.remove()
     closeSessionElement.remove()
   }
 

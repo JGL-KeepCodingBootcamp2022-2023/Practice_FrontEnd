@@ -1,4 +1,4 @@
-#closeSession {
+.buttons {
     background-color: inherit ;
     color: rgb(210, 156, 5);
     border: none;
@@ -10,4 +10,19 @@
     grid-row: 1;
     text-align: center;
     margin: 0;
+}
+
+#submit {
+    border-radius: 5px;
+    border: 2px solid rgb(210, 156, 5);
+}
+
+#reset {
+    border-radius: 5px;
+    border: 2px solid rgb(210, 156, 5);
+    margin-left: 15px;
+}
+
+.tittle {
+    font-weight: bold;
 }

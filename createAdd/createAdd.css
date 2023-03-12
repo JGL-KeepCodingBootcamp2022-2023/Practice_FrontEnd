@@ -1,0 +1,46 @@
+.createAddForm {
+    display: block;
+    text-align: center;
+    border: solid 2px beige;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .productName {
+    text-align: center;
+  }
+  .add img {
+    object-fit: cover;
+    width: fit-content;
+    height: 150px;
+  }
+
+  .productData h2{
+    display: inline-block;
+    margin-left: auto;
+    /*margin-right: auto;*/
+    padding: 5px;
+    border-style: dashed;
+    border-radius: 5px;
+  
+    color: darkred;
+  }
+
+  #isSale {
+    font-weight: bold; 
+    text-transform: uppercase;
+  }
+
+.typeTag {
+  font-weight: bold;
+}
+
+.typeTag span {
+  font-weight: initial;
+}
+
+.buttonsArea {
+    margin-top: 10px;
+}

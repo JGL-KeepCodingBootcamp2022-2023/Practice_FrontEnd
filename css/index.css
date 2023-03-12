@@ -8,3 +8,14 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.userActions p {
+
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.userActions span{
+    font-style: oblique;
+}
