@@ -31,39 +31,44 @@
     </header>
     <section class="userActions">
         <div class = "navbar">
+            <div id="logged"></div>
             <a href="/" id="backHome">Home</a>
             <a href="/login.html" id="loginLink">Login</a>
             <a href="/signup.html" id="signupLink">SignUp</a>
             <button id="closeSession" class="buttons">Close Session</button>
         </div>
+        <div id="hello"></div>
     </section>
     <div class="createAddForm">
         <h1>Do you want to buy somthing?<br>
             Or to sell something?</h1>
         <form id="createAddForm">
-            <!--
-                <label for="userAvatar">Avatar</label>
-            <input type="url" name="userAvatar" value="https://www.lavanguardia.com/files/content_image_desktop_filter/uploads/2018/06/22/5fa4335996cdf.jpeg">
-        -->
-        <label for="addName" class="tittle">Producto</label>
-        <input type="text" id="addName" name="addName" required>
+
+            <label for="userAvatar">Avatar</label>
+            <input type="url" name="userAvatar" id="userAvatar">
             
-            <!--
+            <label for="addName" class="tittle">Producto</label>
+            <input type="text" id="addName" name="addName" required>
+            
+            
             <label for="addSelect" class="tittle">¿Compras o vendes?</label>
-            <select name="addSelect"> 
+            <select name="addSelect" id="addSelect"> 
                     <option value="vende" selected>Se vende</option>
                     <option value="busca">Se busca</option>
             </select>
             
             <label for="addPrice" class="tittle">Precio</label>
-            <input type="tel" name="addPrice" minlength="1" size="10" required> (Mínimo 1 €).
+            <input type="tel" id="addPrice" name="addPrice" minlength="1" size="10" required> (Mínimo 1 €).
+            
             <label for="addPhoto" class="tittle">Foto del producto</label>
-            <input type="text" name="addPhoto">
+            <input type="url" id="addPhoto" name="addPhoto">
+            
             <label for="addTag" class="tittle">Tag</label>
-            <input type="text" name="addTag">
+            <input type="text" id="addTag" name="addTag">
+            
             <label for="addDescription">Descripción del producto</label>
             <textarea name="addDescription" id="addDescription" class="tittle" cols="30" rows="10" required>Describe aquí tu producto</textarea>
-            -->
+            
             <div class="buttonsArea">
             <button type="submit" id="submit" class="buttons">Create Add</button>
             <button type="reset" id="reset" class="buttons">Reset Info</button>

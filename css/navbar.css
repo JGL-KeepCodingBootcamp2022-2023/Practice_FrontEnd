@@ -1,17 +1,18 @@
+
 .navbar a {
-    color: rgb(210, 156, 5);
-    font-family: 'Ananda', 'Ananda Black';
-    font-style: italic;
     text-decoration: none;
 }
 
 .navbar {
+    color: rgb(210, 156, 5);
+    font-family: 'Ananda', 'Ananda Black';
+    font-style: italic; 
     background-color: beige;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-
+    align-items: center;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 15px;
@@ -36,7 +37,18 @@
 }
 
 #backHome{
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
     text-align: center;
+}
+
+#logged p{
+    font-size: 16px; 
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+}
+
+#logged span{
+    font-weight: bolder;
 }

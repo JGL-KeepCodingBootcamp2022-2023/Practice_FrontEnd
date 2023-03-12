@@ -44,5 +44,10 @@ export async function addDetailController(addDetailElement, addId) {
             }
         }
     
-    
+        const token = localStorage.getItem('token')
+        const closeSessionElement = userActionsElement.querySelector('#closeSession')
+        closeSessionElement.addEventListener('click', () => {
+            localStorage.removeItem('token')
+            window.location.reload()
+          })
 }
