@@ -14,11 +14,11 @@ export function loginController(loginElement) {
         if (!isMailValid(emailElement.value)) {
             alert('Email no válido')
             //TODO BADNOTIFICATION
-            //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El mail no está escrito correctamente')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El mail no está escrito correctamente')
         }
         else {
             //TODO SPINNER
-            //buildSpinnerView(loginElement)
+            buildSpinnerView(loginElement)
             logUser(loginElement);               
         }
     })
@@ -32,16 +32,16 @@ async function logUser(loginElement) {
     try {
         const jwt = await loginUser(username, password);
         localStorage.setItem('token', jwt)
-        alert('Inicio de sesión exitoso')
-        //TODO GOODNOTIFICATION
-        //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Login successful')
+
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Login successful')
         window.location = '/'
+        
     } catch (error) {
         alert('Email inválido')
         //TODO BADNOTIFICATION
-        //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Email inválido')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Email inválido')
     } finally {
         //TODO 
-        //hideSpinner(loginElement)
+        hideSpinner(loginElement)
     }
 }

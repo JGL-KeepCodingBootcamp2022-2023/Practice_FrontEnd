@@ -1,19 +1,23 @@
 import { deleteAdd, getAddById } from './addDetail.js';
 import { buildAddDetail } from './addDetailView.js';
 import { decodeToken } from '../utils/decodeToken.js';
+import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
+import { pubSub } from '../pubSub.js';
 
 export async function addDetailController(addDetailElement, addId) {  
         try {
-            //TODO To put a spinner
+            buildSpinnerView(addDetailElement)
+
             const add = await getAddById(addId);
             addDetailElement.innerHTML = buildAddDetail(add);
             handleDeleteAddButton(addDetailElement, add);
-            //TODO pubSub. Notification 'El anuncio se ha cargado correctamente'}
+
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio se ha cargado correctamente')
         } catch (error) {
-            //TODO pubSub. Notifications 'El anuncio solicitado no existe'
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio solicitado no existe')
             alert(error);
         }finally{
-            //TODO hide spinner
+            hideSpinner(addDetailElement)
         }
 
         function handleDeleteAddButton(addDetailElement, add)  {
@@ -47,7 +51,9 @@ export async function addDetailController(addDetailElement, addId) {
         const token = localStorage.getItem('token')
         const closeSessionElement = userActionsElement.querySelector('#closeSession')
         closeSessionElement.addEventListener('click', () => {
+            buildSpinnerView(addDetailElement)
             localStorage.removeItem('token')
             window.location.reload()
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio se ha borrado correctamente')
           })
 }

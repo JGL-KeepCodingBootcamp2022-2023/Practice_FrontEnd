@@ -12,19 +12,22 @@ export function signupController(signupElement) {
     const passwordElement = signupElement.querySelector('#password');
     const passwordConfirmElement = signupElement.querySelector('#passwordConfirm');
     const spinnerElement = signupElement.querySelector('.notifications')
-    //signupElement.buildSpinnerView(signupElement)
+    signupElement.buildSpinnerView(signupElement)
 
     if (isMailValid(emailElement.value) &&
         isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
           try {
             await createUser(emailElement.value, passwordElement.value)
             signupElement.reset();
-            //TODO pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Usuario creado correctamente')
+
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Usuario creado correctamente')
             window.location = '/'
+            
           } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, error.message)
+
           }finally{
-           //TODO hideSpinner(signupElement)
+            hideSpinner(signupElement)
           }
     }
   })

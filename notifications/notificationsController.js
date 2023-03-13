@@ -4,7 +4,7 @@ import { buildNotificationsView } from './notificationsView.js'
 export function notificationController(notificationsElement) {
 
     function showMessage(message) {
-        const responseCode = response.status;
+        /*const responseCode = response.status;
         console.log(responseCode)
         if (responseCode === 200){
             notificationsElement.classList.add('goodNotifications')
@@ -12,7 +12,7 @@ export function notificationController(notificationsElement) {
             notificationsElement.classList.add('neutralNotifications')
         } else {
             notificationsElement.classList.add('badNotifications')
-        }      
+        }*/      
 
         notificationsElement.innerHTML = buildNotificationsView(message)
 

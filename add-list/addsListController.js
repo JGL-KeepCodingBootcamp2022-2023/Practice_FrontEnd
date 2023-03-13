@@ -16,19 +16,17 @@ export async function addsListController(addListElement) {
         
         if (adds.length >0) {
             alert('Todos Los anuncios se cargaron correctamente')
-            //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             drawAdds(adds, addListElement) 
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             console.log(adds.status)
+            
         } else {
-            alert('No hay anuncios disponibles')
-            //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
             //dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
         }
     } catch (err) {
-        alert('no se han podido cargar los anuncios')
-        //pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
-        //dispatchCustomEvent( {isError: true, message: 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.' }, addListElement)
-
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
+        
     }finally {
         addListElement.classList.replace('spinnerView', 'adds-list')
         hideSpinner(addListElement)

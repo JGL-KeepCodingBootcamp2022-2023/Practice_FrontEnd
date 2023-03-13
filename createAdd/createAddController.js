@@ -1,5 +1,6 @@
 import { createAdd } from './createAdd.js'
-
+import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
+import { pubSub } from '../pubSub.js';
 
 export const createAddController = (createAddFormElement) => {
     
@@ -21,22 +22,26 @@ export const createAddController = (createAddFormElement) => {
         
         try {
             //TODO SPINNER
+            buildSpinnerView(createAddFormElement)
             await createAdd(addAvatar, addName, addSelect, addPrice,addPhoto, addDescription, addTag)
 
             //TODO NOTIFICATION GOOD
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Anucio creado correctamente')
             alert('Anucio creado correctamente')
             window.location = '/'
         } catch (error) {
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'no se ha podido crear el anuncio - En tryCatch')
             alert('no se ha podido crear el anuncio - En tryCatch')
             console.log(error)
             //TODO NOTIFICATION BAD
         }finally {
             //TODO hidespiner
+            hideSpinner(createAddFormElement)
         }
     })
-    /*const closeSessionElement = userActionsElement.querySelector('#closeSession')
+    const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
         localStorage.removeItem('token')
         window.location.reload()
-      })*/
+      })
 }
