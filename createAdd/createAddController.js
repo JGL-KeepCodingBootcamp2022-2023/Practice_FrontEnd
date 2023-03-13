@@ -14,24 +14,32 @@ export const createAddController = (createAddFormElement, spinnerElement) => {
         
         const addAvatar = formData.get('userAvatar')
         const addName = formData.get('addName');
-        const addSelect = formData.get('addSelect');
+       
+        let index = createAddFormElement.addSelect.selectedIndex
+        let addSelect =  0; //formData.get('addSelect');
+        if (index === 0) {
+            addSelect = 'vende';
+        } else {
+            addSelect = 'busca';
+        }
+        
         const addPrice = formData.get('addPrice');
-        const addPhoto = formData.get('addPhoto')
+        const addPhoto = formData.get('addPhoto');
         const addDescription = formData.get('addDescription');
-        const addTag = formData.get('addTag');
+        //const addTag = formData.get('addTag');
         
         try {
             //TODO SPINNER
             buildSpinnerView(createAddFormElement)
-            await createAdd(addAvatar, addName, addSelect, addPrice,addPhoto, addDescription, addTag)
-
+            await createAdd(addAvatar, addName, addSelect, addPrice,addPhoto, addDescription)
+            
             //TODO NOTIFICATION GOOD
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Anucio creado correctamente')
-            alert('Anucio creado correctamente')
-            window.location = '/'
+            alert(addPrice)
+            //window.location = '/'
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'no se ha podido crear el anuncio - En tryCatch')
-            alert('no se ha podido crear el anuncio - En tryCatch')
+
             console.log(error)
             //TODO NOTIFICATION BAD
         }finally {
@@ -39,9 +47,9 @@ export const createAddController = (createAddFormElement, spinnerElement) => {
             hideSpinner(createAddFormElement)
         }
     })
-    const closeSessionElement = userActionsElement.querySelector('#closeSession')
+    /*const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
         localStorage.removeItem('token')
         window.location.reload()
-      })
+      })*/
 }

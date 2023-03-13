@@ -32,7 +32,6 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                 if(add.userId === userInfo.userId) {
                     deleteButtonElement.addEventListener('click', async () => {
                         const answer = confirm('¿Está segur@ de que desea borrar el anuncio?')
-                        
                         if(answer){
                             await deleteAdd(add.id)
                             //IR A SPARRET A BORRAR EL ADD

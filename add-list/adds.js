@@ -1,4 +1,4 @@
-
+export let statusAddsList = 0;
 export async function getAdds() {
     const productsUrl = 'http://localhost:8000/api/products';
     
@@ -8,6 +8,7 @@ export async function getAdds() {
     if(!response.ok) {
         throw new Error('Error al identificar al usuari@ ')
     }
-    
+
+    statusAddsList = response.status
     return adds
 }

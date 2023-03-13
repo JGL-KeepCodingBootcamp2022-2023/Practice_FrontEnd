@@ -17,9 +17,8 @@ export const deleteAdd = async (addId) => {
     const response = await fetch(`http://localhost:8000/api/products/${addId}`, {
         method: 'DELETE',
         headers: {
-            'content-type': 'application/json',
-            'Authoritation': `Bearer ${token}`
-
-        },
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`,
+        }
     })
 }

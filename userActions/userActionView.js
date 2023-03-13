@@ -1,6 +1,6 @@
 export function buildGreeting(name) {
   const paragraph = document.createElement('p')
-  paragraph.innerHTML = `Logged as: <span>${name}</span>!`
+  paragraph.innerHTML = `Logged as: <span>${name}</span>`
   return paragraph
 }
 

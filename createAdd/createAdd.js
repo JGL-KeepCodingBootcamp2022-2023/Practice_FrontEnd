@@ -1,13 +1,15 @@
-export async function createAdd(addAvatar, addName, addSelect, addPrice, addPhoto, addDescription, addTag) {
+export let statusCreateAdd = 0;
+export async function createAdd(addAvatar, addName, addSelect, addPrice, addPhoto, addDescription) {
   const token = localStorage.getItem('token')
+ 
     const newAdd = {
         avatar: addAvatar,
         name: addName,
         select: addSelect,
         price: addPrice,
         photo: addPhoto,
-        description: addDescription,
-        tag: addTag
+        description: addDescription
+        //tag: addTag
         };
 
     //Consume el API sparrets utilizando el método POST y enviando los datos que ha introducido el usuario
@@ -19,10 +21,10 @@ export async function createAdd(addAvatar, addName, addSelect, addPrice, addPhot
         },
         body: JSON.stringify(newAdd)
       })
-
+      statusCreateAdd = response.status
     //Gestión de la respuesta
     if (!response.ok) {
-        throw new Error('Error al crear el anuncio')
+        throw new Error('Error creating add')
     }
 
 }

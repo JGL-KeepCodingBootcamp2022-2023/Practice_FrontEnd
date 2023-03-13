@@ -5,6 +5,7 @@ export function userActionsController(userActionsElement) {
   const token = localStorage.getItem('token')
   
   const closeSessionElement = userActionsElement.querySelector('#closeSession')
+  const payload = decodeToken(token);
 
   if (token) {
     const loginLinkElement = userActionsElement.querySelector('#loginLink')
@@ -14,7 +15,6 @@ export function userActionsController(userActionsElement) {
     loginLinkElement.remove();
     signupLinkElement.remove();
 
-    const payload = decodeToken(token);
     loggedElement.appendChild(buildGreeting(payload.username));
     
     sayHello(userActionsElement, payload)

@@ -1,7 +1,7 @@
 export function buildAddView(product) {
     const newAddElement = document.createElement('products');
     newAddElement.classList.add('product')
-    //const addDate = new Date(product.date)
+    const addDate = new Date(product.updatedAt)
  
     newAddElement.innerHTML = `   
         <a href="/addDetail.html?addId=${product.id}">    
@@ -11,15 +11,15 @@ export function buildAddView(product) {
                         <h1>${product.name}</h1>
                     </div>
                     <div class = "productData">
-                        <p> Se <span id="isSale" >${product.sale}</span> este producto por:</p>
+                        <p> Se <span id="isSale" >${product.select}</span> este producto por:</p>
                         <h2>${product.price} €</h2>
                         <div class = "typeTag">
-                            <p>Tags: <span>${product.tag.join(', ')}. </p>
+                            
                         </div>
                     </div>
                     <div class="product-img">
                         <img src="${product.photo}">            
-                        <p>Fecha de creación: </p>
+                        <p>Fecha de publicación: ${addDate.toUTCString()}</p>
                     </div>
                 </div>
             </div>

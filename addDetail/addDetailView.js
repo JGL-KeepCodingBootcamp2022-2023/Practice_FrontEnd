@@ -1,18 +1,19 @@
-export function buildAddDetail(product) {
+export function buildAddDetail(product, user) {
+    const addDate = new Date(product.updatedAt)
     return `
     <div class="add">
         <div class="productInfo"> 
             <div class="userInfo">
                 <img src="${product.avatar}" alt="Avatar del usuario">
-                <p>${product.username}</p>
+                <p>User: ${product.userId}</p>
             </div>
             <div class="productName">
                 <h1>${product.name}</h1>
-                <p>Fecha de publicación: </p>
+                <p>Fecha de publicación: ${addDate.toUTCString()}</p>
             </div>
             <div class="productImg">
                 <img src="${product.photo}">            
-                <p>Tags: <span>${product.tag.join(', ')}.</span> </p>
+
             </div>
             </div>
             <div class="description">

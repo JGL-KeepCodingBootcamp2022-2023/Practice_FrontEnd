@@ -1,7 +1,8 @@
-import { getAdds } from './adds.js'
+import { getAdds, statusAddsList } from './adds.js'
 import { buildAddView } from './addsView.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js'
+
 
 export async function addsListController(addListElement, spinnerElement) {
     //Ruleta de carga
@@ -18,7 +19,7 @@ export async function addsListController(addListElement, spinnerElement) {
             alert('Todos Los anuncios se cargaron correctamente')
             drawAdds(adds, addListElement) 
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
-            console.log(adds.status)
+            console.log(statusAddsList)
             
         } else {
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
@@ -28,7 +29,7 @@ export async function addsListController(addListElement, spinnerElement) {
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
         
     }finally {
-        addListElement.classList.replace('spinnerView', 'adds-list')
+        //addListElement.classList.replace('spinnerView', 'adds-list')
         hideSpinner(spinnerElement)
     }
 }
