@@ -3,8 +3,9 @@ import { notificationController } from '../notifications/notificationsController
 
 const signupElement = document.querySelector('#createUser')
 const notificationElement = document.querySelector('.notifications')
+const spinnerElement = document.querySelector('.spinnerHere')
 
-signupController(signupElement)
+signupController(signupElement, spinnerElement)
 
 notificationController(notificationElement)
 

@@ -2,7 +2,7 @@ import { createAdd } from './createAdd.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export const createAddController = (createAddFormElement) => {
+export const createAddController = (createAddFormElement, spinnerElement) => {
     
     //capturar el submit
     createAddFormElement.addEventListener('submit', async (event) => {

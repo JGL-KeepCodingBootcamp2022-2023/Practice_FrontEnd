@@ -3,10 +3,10 @@ import { buildAddView } from './addsView.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js'
 
-export async function addsListController(addListElement) {
+export async function addsListController(addListElement, spinnerElement) {
     //Ruleta de carga
-    addListElement.classList.replace('adds-list', 'spinnerView')
-    addListElement.innerHTML = buildSpinnerView(addListElement); 
+    //addListElement.classList.replace('adds-list', 'spinnerView')
+    spinnerElement.innerHTML = buildSpinnerView(spinnerElement); 
     let adds = [];
      
     try {
@@ -29,7 +29,7 @@ export async function addsListController(addListElement) {
         
     }finally {
         addListElement.classList.replace('spinnerView', 'adds-list')
-        hideSpinner(addListElement)
+        hideSpinner(spinnerElement)
     }
 }
 

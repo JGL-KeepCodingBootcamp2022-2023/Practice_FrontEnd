@@ -3,6 +3,7 @@ import { notificationController } from '../notifications/notificationsController
 import { userActionsController } from '../userActions/userActionController.js';
 
 const userActionsElement = document.querySelector('.userActions')
+const spinnerElement = document.querySelector('.spinnerHere')
 
 //Reading queryparam from url
 const params = new URLSearchParams(window.location.search);
@@ -14,7 +15,7 @@ if (!addId) {                       //Validation that addId exists
     window.location = '/'
 }else {
     const addDetailElement = document.querySelector('.addDetail');
-    addDetailController(addDetailElement, addId)
+    addDetailController(addDetailElement, addId, spinnerElement)
 }
 
 userActionsController(userActionsElement);

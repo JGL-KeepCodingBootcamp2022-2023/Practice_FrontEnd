@@ -3,7 +3,7 @@ import { isMailValid } from '../utils/isMailValid.js'
 import { loginUser } from './login.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 
-export function loginController(loginElement) {
+export function loginController(loginElement, spinnerElement) {
     loginElement.addEventListener('submit', (event) => {
         event.preventDefault();
 

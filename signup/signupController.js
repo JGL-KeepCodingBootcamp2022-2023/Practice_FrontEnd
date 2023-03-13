@@ -3,7 +3,7 @@ import { createUser } from "./signup.js";
 import { isMailValid } from '../utils/isMailValid.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 
-export function signupController(signupElement) {
+export function signupController(signupElement, spinnerElement) {
 
   signupElement.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -11,7 +11,6 @@ export function signupController(signupElement) {
     const emailElement = signupElement.querySelector('#username');
     const passwordElement = signupElement.querySelector('#password');
     const passwordConfirmElement = signupElement.querySelector('#passwordConfirm');
-    const spinnerElement = signupElement.querySelector('.notifications')
     signupElement.buildSpinnerView(signupElement)
 
     if (isMailValid(emailElement.value) &&

@@ -3,6 +3,7 @@ import { notificationController } from "../notifications/notificationsController
 
 const loginElement = document.querySelector('#logUser')
 const notificationElement = document.querySelector('.notifications')
+const spinnerElement = document.querySelector('.spinnerHere')
 
 notificationController(notificationElement)
-loginController(loginElement)
+loginController(loginElement, spinnerElement)

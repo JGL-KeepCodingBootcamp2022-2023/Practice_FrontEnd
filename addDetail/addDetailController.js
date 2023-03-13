@@ -4,7 +4,7 @@ import { decodeToken } from '../utils/decodeToken.js';
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export async function addDetailController(addDetailElement, addId) {  
+export async function addDetailController(addDetailElement, addId, spinnerElement) {  
         try {
             buildSpinnerView(addDetailElement)
 
