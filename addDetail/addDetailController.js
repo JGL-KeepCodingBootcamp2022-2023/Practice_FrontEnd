@@ -6,7 +6,7 @@ import { pubSub } from '../pubSub.js';
 
 export async function addDetailController(addDetailElement, addId, spinnerElement) {  
         try {
-            buildSpinnerView(addDetailElement)
+            spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
 
             const add = await getAddById(addId);
             addDetailElement.innerHTML = buildAddDetail(add);
@@ -17,7 +17,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio solicitado no existe')
             alert(error);
         }finally{
-            hideSpinner(addDetailElement)
+            hideSpinner(spinnerElement)
         }
 
         function handleDeleteAddButton(addDetailElement, add)  {
@@ -34,10 +34,9 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                         const answer = confirm('¿Está segur@ de que desea borrar el anuncio?')
                         if(answer){
                             await deleteAdd(add.id)
-                            //IR A SPARRET A BORRAR EL ADD
-                            //TODO SPINNER
+                            spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
                             //TODO NOTIFICATION GOOD
-                            //TODO HIDE SPINNER
+                            hideSpinner(spinnerElement)
                             window.location = '/'
                         }
                     })                
@@ -47,12 +46,12 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
             }
         }
     
-        const token = localStorage.getItem('token')
-        const closeSessionElement = userActionsElement.querySelector('#closeSession')
-        closeSessionElement.addEventListener('click', () => {
-            buildSpinnerView(addDetailElement)
-            localStorage.removeItem('token')
-            window.location.reload()
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio se ha borrado correctamente')
-          })
+    const token = localStorage.getItem('token')
+    const closeSessionElement = userActionsElement.querySelector('#closeSession')
+    closeSessionElement.addEventListener('click', () => {
+        buildSpinnerView(addDetailElement)
+        localStorage.removeItem('token')
+        window.location.reload()
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio se ha borrado correctamente')
+        })
 }

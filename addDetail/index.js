@@ -4,6 +4,7 @@ import { userActionsController } from '../userActions/userActionController.js';
 
 const userActionsElement = document.querySelector('.userActions')
 const spinnerElement = document.querySelector('.spinnerHere')
+const notificationsElement = document.querySelector('.notifications');
 
 //Reading queryparam from url
 const params = new URLSearchParams(window.location.search);
@@ -18,4 +19,5 @@ if (!addId) {                       //Validation that addId exists
     addDetailController(addDetailElement, addId, spinnerElement)
 }
 
+notificationController(notificationsElement);
 userActionsController(userActionsElement);

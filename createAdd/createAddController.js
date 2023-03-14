@@ -29,24 +29,23 @@ export const createAddController = (createAddFormElement, spinnerElement) => {
         //const addTag = formData.get('addTag');
         
         try {
-            //TODO SPINNER
-            buildSpinnerView(createAddFormElement)
+
+            spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
             await createAdd(addAvatar, addName, addSelect, addPrice,addPhoto, addDescription)
             
-            //TODO NOTIFICATION GOOD
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Anucio creado correctamente')
-            alert(addPrice)
-            //window.location = '/'
+            window.location = '/'
+
         } catch (error) {
+
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'no se ha podido crear el anuncio - En tryCatch')
 
-            console.log(error)
-            //TODO NOTIFICATION BAD
         }finally {
-            //TODO hidespiner
-            hideSpinner(createAddFormElement)
+
+            hideSpinner(spinnerElement)
         }
     })
+    
     /*const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
         localStorage.removeItem('token')

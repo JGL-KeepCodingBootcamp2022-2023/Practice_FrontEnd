@@ -16,7 +16,7 @@ export async function addsListController(addListElement, spinnerElement) {
         //dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
         
         if (adds.length >0) {
-            alert('Todos Los anuncios se cargaron correctamente')
+            
             drawAdds(adds, addListElement) 
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
             console.log(statusAddsList)
