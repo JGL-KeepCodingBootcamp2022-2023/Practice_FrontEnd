@@ -11,9 +11,4 @@ notificationController(notificationsElement);
 addsListController(addListElement, spinnerElement, notificationsElement);
 userActionsController(userActionsElement, spinnerElement);                                            //Recibe un nodo del DOM del cual se tiene que encargar.
 
-const showMessage = notificationController(notificationsElement);
 
-addListElement.addEventListener('newNotification', (event) => {
-    console.log('He recibido el evento!!!!', event.detail)
-    showMessage(event.detail)
-});

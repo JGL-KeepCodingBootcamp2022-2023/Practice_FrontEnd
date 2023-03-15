@@ -4,7 +4,7 @@ import { decodeToken } from '../utils/decodeToken.js';
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export async function addDetailController(addDetailElement, addId, spinnerElement, notificationsElement) {  
+export async function addDetailController(addDetailElement, addId, spinnerElement, notificationsElement, userActionsElement) {  
         try {
             spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
 
@@ -13,7 +13,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
             handleDeleteAddButton(addDetailElement, add);
 
             notificationsElement.classList.add('goodNotifications')
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading ads');
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading ad');
 
         } catch (error) {
             notificationsElement.classList.add('badNotifications')
@@ -35,12 +35,12 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                 if(add.userId === userInfo.userId) {
                     deleteButtonElement.addEventListener('click', async () => {
                         spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-                        const answer = confirm('¿Está segur@ de que desea borrar el anuncio?')
+                        const answer = confirm('Are you sure you want to delete the ad?')
                         if(answer){
                     
                             await deleteAdd(add.id)
                             notificationsElement.classList.toggle('goodNotifications')
-                            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading ads');
+                            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The ad has been successfully deleted');
                             hideSpinner(spinnerElement)
                             window.location = '/'
                         }
@@ -54,9 +54,11 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
     const token = localStorage.getItem('token')
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
-        buildSpinnerView(addDetailElement)
+        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         localStorage.removeItem('token')
+        notificationsElement.classList.replace('hide', 'goodNotifications')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
+        hideSpinner(spinnerElement)
         window.location.reload()
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio se ha borrado correctamente')
         })
 }

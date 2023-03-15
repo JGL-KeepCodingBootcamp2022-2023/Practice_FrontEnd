@@ -5,6 +5,4 @@ export function buildSpinnerView(element) {
 export function hideSpinner(element) {     
   const byeSpinner = element.querySelector('#spinner')  
   byeSpinner.parentNode.removeChild(byeSpinner)               
-  //element.classList.replace('spinnerView', 'hide')
-  //element.innerHTML = '';
  };

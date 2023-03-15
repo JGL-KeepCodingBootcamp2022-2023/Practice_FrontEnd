@@ -3,7 +3,7 @@
     display:flex;
     position: absolute;
     justify-content: center;
-    margin-top: -185px;
+    margin-top: -130px;
     background-color: lightgreen;
     color: darkgreen;
     font-weight: bolder;
@@ -19,7 +19,7 @@
     display:flex;
     position: absolute;
     justify-content: center;
-    margin-top: -180px;
+    margin-top: -130px;
     background-color: rgb(245, 119, 119);
     color: rgb(62, 1, 1);
     font-weight: bolder;
