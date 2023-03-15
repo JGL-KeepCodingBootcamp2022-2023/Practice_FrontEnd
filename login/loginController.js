@@ -45,7 +45,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             
         }finally{
             hideSpinner(spinnerElement)
-            //debugger
+            
         }
 
     }
