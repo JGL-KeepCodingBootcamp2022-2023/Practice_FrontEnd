@@ -38,4 +38,14 @@
   font-weight: initial;
 }
 
+.product-img p {
+  font-weight: bold;
+  font-size: smaller;
+}
+
+.product-img span {
+  font-weight: normal;
+  font-style: italic;
+}
+
   

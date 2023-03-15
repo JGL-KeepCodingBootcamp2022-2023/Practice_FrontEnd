@@ -1,4 +1,4 @@
-import { getAdds, statusAddsList } from './adds.js'
+import { getAdds } from './adds.js'
 import { buildAddView } from './addsView.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js'
@@ -17,15 +17,15 @@ export async function addsListController(addListElement, spinnerElement, notific
             drawAdds(adds, addListElement) 
             notificationsElement.classList.add('goodNotifications')
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading adds');
-            console.log(statusAddsList)
             
         } else {
             notificationsElement.classList.add('badNotifications')
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No adds yet. Sorry!');
         }
+        
     } catch (err) {
         notificationsElement.classList.add('badNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Unable to load the ads. Please try again later.')
         
     }finally {
         hideSpinner(spinnerElement)

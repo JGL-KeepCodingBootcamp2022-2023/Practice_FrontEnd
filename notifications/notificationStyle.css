@@ -2,6 +2,7 @@
 .goodNotifications {
     display:flex;
     position: absolute;
+    justify-content: center;
     margin-top: -185px;
     background-color: lightgreen;
     color: darkgreen;
@@ -10,14 +11,15 @@
     border-radius: 15px;
     padding-top: 5px;
     padding-left: 5px;
-    width: 175px;
+    width: 170px;
     opacity: 65%;
 }
 
 .badNotifications {
     display:flex;
     position: absolute;
-    margin-top: -185px;
+    justify-content: center;
+    margin-top: -180px;
     background-color: rgb(245, 119, 119);
     color: rgb(62, 1, 1);
     font-weight: bolder;
@@ -46,6 +48,6 @@
 }
 
 .notificationText{
-    margin-left: 5px;
+    text-align: center;
     margin-top: 0px;
 }

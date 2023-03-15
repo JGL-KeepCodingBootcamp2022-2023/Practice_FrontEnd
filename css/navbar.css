@@ -3,6 +3,15 @@
     text-decoration: none;
 }
 
+.navbar a:visited {
+    text-decoration: none;
+    color: rgb(210, 156, 5);
+}
+
+.navbar a:active {
+    color: rgb(227, 201, 129);
+}
+
 .navbar {
     color: rgb(210, 156, 5);
     font-family: 'Ananda', 'Ananda Black';

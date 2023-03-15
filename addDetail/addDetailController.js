@@ -4,7 +4,7 @@ import { decodeToken } from '../utils/decodeToken.js';
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export async function addDetailController(addDetailElement, addId, spinnerElement) {  
+export async function addDetailController(addDetailElement, addId, spinnerElement, notificationsElement) {  
         try {
             spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
 
@@ -12,10 +12,13 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
             addDetailElement.innerHTML = buildAddDetail(add);
             handleDeleteAddButton(addDetailElement, add);
 
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio se ha cargado correctamente')
+            notificationsElement.classList.add('goodNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading ads');
+
         } catch (error) {
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El anuncio solicitado no existe')
-            alert(error);
+            notificationsElement.classList.add('badNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, `Unable to load the ad.Please try again later.`)
+
         }finally{
             hideSpinner(spinnerElement)
         }
@@ -36,8 +39,8 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                         if(answer){
                     
                             await deleteAdd(add.id)
-                            
-                            //TODO NOTIFICATION GOOD
+                            notificationsElement.classList.toggle('goodNotifications')
+                            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading ads');
                             hideSpinner(spinnerElement)
                             window.location = '/'
                         }

@@ -1,7 +1,8 @@
 import { decodeToken } from '../utils/decodeToken.js'
+import { buildSpinnerView } from '../utils/SpinnerView.js';
 import { buildGreeting, buildGreeting2 } from './userActionView.js'
 
-export function userActionsController(userActionsElement) {
+export function userActionsController(userActionsElement, spinnerElement) {
   const token = localStorage.getItem('token')
   
   const closeSessionElement = userActionsElement.querySelector('#closeSession')
@@ -20,6 +21,7 @@ export function userActionsController(userActionsElement) {
     sayHello(userActionsElement, payload)
 
     closeSessionElement.addEventListener('click', () => {
+      spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
       localStorage.removeItem('token');
       window.location.reload();
     })

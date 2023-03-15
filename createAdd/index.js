@@ -10,11 +10,12 @@ const spinnerElement = document.querySelector('.spinnerHere')
 const notificationsElement = document.querySelector('.notifications');
 
 if(!token) {                    //Refuse acces to createAdd webpage without login
-    pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'You need to be logged if you want to create an add')
+    notificationsElement.classList.add('badNotifications')
+    pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'You need to be logged if you want to create an ad')
     window.location = '/';
 } else {
     const createAddFormElement = document.querySelector('#createAddForm');
-    createAddController(createAddFormElement, spinnerElement)
+    createAddController(createAddFormElement, spinnerElement, notificationsElement, userActionsElement)
 };
 
 notificationController(notificationsElement);

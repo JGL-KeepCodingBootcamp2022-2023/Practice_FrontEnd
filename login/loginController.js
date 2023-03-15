@@ -3,7 +3,7 @@ import { isMailValid } from '../utils/isMailValid.js'
 import { loginUser } from './login.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 
-export function loginController(loginElement, spinnerElement) {
+export function loginController(loginElement, spinnerElement, notificationsElement) {
     loginElement.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -14,33 +14,34 @@ export function loginController(loginElement, spinnerElement) {
 
         if (!isMailValid(emailElement.value)) {
 
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El mail no está escrito correctamente')
-            hideSpinner(spinnerElement)
+            notificationsElement.classList.add('badNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The e-mail address entered is incorrect')
         }
-        
         else {
-            logUser(loginElement);               
+            logUser(loginElement, notificationsElement);               
+            
         }
     })
-}
-
-async function logUser(loginElement) {
-    const formData = new FormData(loginElement);
-    const username = formData.get('username');
-    const password = formData.get('password');
-    
-    try {
-
-        const jwt = await loginUser(username, password);
-        localStorage.setItem('token', jwt)
-
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Login successful')
-        window.location = '/'
+    async function logUser(loginElement, notificationsElement, spinnerElement) {
+        const formData = new FormData(loginElement);
+        const username = formData.get('username');
+        const password = formData.get('password');
         
-    } catch (error) {
-
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Email inválido')
-        hideSpinner(spinnerElement)
-
+        try {
+    
+            const jwt = await loginUser(username, password);
+            localStorage.setItem('token', jwt)
+    
+            notificationsElement.classList.add('goodNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Login successful')
+            window.location = '/'
+            
+        } catch (error) {
+            notificationsElement.classList.add('badNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Invalid e-mail or password')
+        
+        }finally{
+            hideSpinner(spinnerElement)
+        }
     }
 }

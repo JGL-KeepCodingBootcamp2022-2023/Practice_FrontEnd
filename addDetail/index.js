@@ -16,7 +16,7 @@ if (!addId) {                       //Validation that addId exists
     window.location = '/'
 }else {
     const addDetailElement = document.querySelector('.addDetail');
-    addDetailController(addDetailElement, addId, spinnerElement)
+    addDetailController(addDetailElement, addId, spinnerElement, notificationsElement)
 }
 
 notificationController(notificationsElement);

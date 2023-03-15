@@ -48,7 +48,7 @@
                 "Work",
                 "Lifestyle"
             ],
-            "description": "El látigo de Indiana Jones es un arma y herramienta que utiliza en muchas de sus aventuras.Ess un artículo de colección hecho de curpiel, que suena a calidad de la buena. Mide 268cm y contabiliza 568 latigazos bien dados. No viene con Indiana Jones"
+            "description": "El látigo de Indiana Jones es un arma y herramienta que utiliza en muchas de sus aventuras.Ess un artículo de colección hecho de curpiel, que suena a calidad de la buena. Mide 268cm y contabiliza 568 latigazos bien dados. No viene con Indiana Jones."
         },
         {
             "name": "i-Pod 7ª Generación",

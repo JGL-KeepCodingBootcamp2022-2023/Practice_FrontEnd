@@ -41,21 +41,23 @@
     </section>
     <section class="spinnerHere"></section>
     <div class="createAddForm">
+
         <h1>Do you want to buy somthing?<br>
             To sell something, maybe?</h1>
+            
         <form id="createAddForm">
 
             <label for="addName" class="tittle">Producto:</label>
-            <input type="text" id="addName" name="addName" required><br>
+            <input type="text" id="addName" name="addName" placeholder="Product name" size="25" required><br>
 
             <label for="addPhoto" class="tittle">Foto del producto:</label>
-            <input type="url" id="addPhoto" name="addPhoto"><br>
+            <input type="url" id="addPhoto" name="addPhoto" placeholder="Product image url"><br>
             
             <!-- <label for="addTag" class="tittle">Tag</label>
             <input type="text" id="addTag" name="addTag"> <br> -->
             
             <label for="addDescription">Descripción del producto:</label><br>
-            <textarea name="addDescription" id="addDescription" class="tittle" cols="30" rows="10" required>Describe aquí tu producto</textarea><br>
+            <textarea name="addDescription" id="addDescription" class="tittle" cols="30" rows="10" placeholder="Describe your product here." required></textarea><br>
             
             <label for="addSelect" class="tittle">Este artículo se:</label>
             <select name="addSelect" id="addSelect"> 
@@ -65,7 +67,7 @@
             
             
             <label for="addPrice" class="tittle">por:</label><br>
-            <h2 class="productData"><input type="tel" id="addPrice" name="addPrice" minlength="1" size="10" required></h2>
+            <h2 class="productData"><input class ="inputPrice" type="tel" id="addPrice" name="addPrice" minlength="1" size="5" placeholder="Price" required> €</h2>
             <p class="minPrice">(Mínimo 1 €)</p>
            
             <div class="buttonsArea">

@@ -6,4 +6,4 @@ const notificationElement = document.querySelector('.notifications')
 const spinnerElement = document.querySelector('.spinnerHere')
 
 notificationController(notificationElement)
-loginController(loginElement, spinnerElement)
+loginController(loginElement, spinnerElement, notificationElement)

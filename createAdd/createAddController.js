@@ -2,7 +2,7 @@ import { createAdd } from './createAdd.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export const createAddController = (createAddFormElement, spinnerElement) => {
+export const createAddController = (createAddFormElement, spinnerElement, notificationsElement, userActionsElement) => {
     
     //capturar el submit
     createAddFormElement.addEventListener('submit', async (event) => {
@@ -16,7 +16,7 @@ export const createAddController = (createAddFormElement, spinnerElement) => {
         const addName = formData.get('addName');
        
         let index = createAddFormElement.addSelect.selectedIndex
-        let addSelect =  0; //formData.get('addSelect');
+        let addSelect =  0;
         if (index === 0) {
             addSelect = 'vende';
         } else {
@@ -33,22 +33,22 @@ export const createAddController = (createAddFormElement, spinnerElement) => {
             spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
             await createAdd(addAvatar, addName, addSelect, addPrice,addPhoto, addDescription)
             
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Anucio creado correctamente')
+            notificationsElement.classList.add('goodNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Ad successfully created.')
             window.location = '/'
 
         } catch (error) {
-
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'no se ha podido crear el anuncio - En tryCatch')
+            notificationsElement.classList.add('badNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The advertisement could not be created')
 
         }finally {
-
             hideSpinner(spinnerElement)
         }
     })
     
-    /*const closeSessionElement = userActionsElement.querySelector('#closeSession')
+    const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
         localStorage.removeItem('token')
         window.location.reload()
-      })*/
+      })
 }

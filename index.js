@@ -9,7 +9,7 @@ const spinnerElement = document.querySelector('.spinnerHere')
 
 notificationController(notificationsElement);
 addsListController(addListElement, spinnerElement, notificationsElement);
-userActionsController(userActionsElement);                                            //Recibe un nodo del DOM del cual se tiene que encargar.
+userActionsController(userActionsElement, spinnerElement);                                            //Recibe un nodo del DOM del cual se tiene que encargar.
 
 const showMessage = notificationController(notificationsElement);
 
