@@ -19,11 +19,9 @@
   .productData h2{
     display: inline-block;
     margin-left: auto;
-    /*margin-right: auto;*/
     padding: 5px;
     border-style: dashed;
     border-radius: 5px;
-  
     color: darkred;
   }
 

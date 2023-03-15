@@ -4,7 +4,7 @@ export function buildAddDetail(product, user) {
     <div class="add">
         <div class="productInfo"> 
             <div class="userInfo">
-                <img src="${product.avatar}" alt="Avatar del usuario">
+                <img src="../img/Alapop.png" alt="Avatar no opcional del usuario. Carita picaresca tapándose la boca">
                 <p>User: ${product.userId}</p>
             </div>
             <div class="productName">
@@ -20,12 +20,14 @@ export function buildAddDetail(product, user) {
             <h3 class="descriptionTittle">Descripción:<h3>
             <p>${product.description}</p>
             <div class = "productData">
-                <p> Se <span id="isSale" >${product.sale}</span> este producto por:</p>
+                <p> Se <span id="isSale" >${product.select}</span> este producto por:</p>
                 <h2>${product.price} €</h2>
                 <div class = "typeTag">
             </div>
         </div>
-        <button id="deleteAdd">Delete Add</button>
+        <div class="deleteButton">
+        <button id="deleteAdd" class="buttons">Delete Add</button>
+        </div
     </div>
 `
 }

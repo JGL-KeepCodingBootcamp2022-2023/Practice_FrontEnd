@@ -12,17 +12,20 @@
     margin: 0;
 }
 
-#submit {
+#submit, #reset, #deleteAdd {
     border-radius: 5px;
     border: 2px solid rgb(210, 156, 5);
 }
 
 #reset {
-    border-radius: 5px;
-    border: 2px solid rgb(210, 156, 5);
     margin-left: 15px;
 }
 
 .tittle {
     font-weight: bold;
+}
+
+.deleteButton {
+    display: flex;
+    justify-content: right;
 }

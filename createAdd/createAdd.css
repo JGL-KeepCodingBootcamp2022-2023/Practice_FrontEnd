@@ -1,4 +1,9 @@
 .createAddForm {
+  display: block;
+  text-align: center;
+}
+
+#createAddForm {
     display: block;
     text-align: center;
     border: solid 2px beige;
@@ -8,39 +13,42 @@
     margin-left: 10px;
     margin-right: 10px;
   }
-  .productName {
-    text-align: center;
-  }
-  .add img {
-    object-fit: cover;
-    width: fit-content;
-    height: 150px;
-  }
 
-  .productData h2{
-    display: inline-block;
-    margin-left: auto;
-    /*margin-right: auto;*/
-    padding: 5px;
-    border-style: dashed;
-    border-radius: 5px;
-  
-    color: darkred;
-  }
+input, textarea, label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.productName {
+  text-align: center;
+}
+.add img {
+  object-fit: cover;
+  width: fit-content;
+  height: 150px;
+}
 
-  #isSale {
-    font-weight: bold; 
-    text-transform: uppercase;
-  }
+.productData{
+  display: inline-block;
+  margin-left: auto;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-style: dashed;
+  border-radius: 5px;
+  color: darkred;
+}
 
+.minPrice {
+  font-size: small;
+  margin-bottom: 15px;
+}
 .typeTag {
-  font-weight: bold;
+font-weight: bold;
 }
 
 .typeTag span {
-  font-weight: initial;
+font-weight: initial;
 }
 
 .buttonsArea {
-    margin-top: 10px;
+  margin-top: 10px;
 }

@@ -10,15 +10,15 @@ export function loginController(loginElement, spinnerElement) {
         const emailElement = loginElement.querySelector('#username')
         const passwordElement = loginElement.querySelector('#password')
     
+        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
 
         if (!isMailValid(emailElement.value)) {
-            alert('Email no válido')
-            //TODO BADNOTIFICATION
+
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'El mail no está escrito correctamente')
+            hideSpinner(spinnerElement)
         }
+        
         else {
-            //TODO SPINNER
-            buildSpinnerView(loginElement)
             logUser(loginElement);               
         }
     })
@@ -30,6 +30,7 @@ async function logUser(loginElement) {
     const password = formData.get('password');
     
     try {
+
         const jwt = await loginUser(username, password);
         localStorage.setItem('token', jwt)
 
@@ -37,11 +38,9 @@ async function logUser(loginElement) {
         window.location = '/'
         
     } catch (error) {
-        alert('Email inválido')
-        //TODO BADNOTIFICATION
+
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Email inválido')
-    } finally {
-        //TODO 
-        hideSpinner(loginElement)
+        hideSpinner(spinnerElement)
+
     }
 }

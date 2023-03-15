@@ -2,23 +2,29 @@
 .goodNotifications {
     display:flex;
     position: absolute;
-    align-items: center;
-    /*margin-left: 35%;*/
+    margin-top: -185px;
     background-color: lightgreen;
     color: darkgreen;
+    font-weight: bolder;
     border: solid 1px darkgreen;
     border-radius: 15px;
     padding-top: 5px;
     padding-left: 5px;
-    width: 250px;
+    width: 175px;
+    opacity: 65%;
 }
 
 .badNotifications {
+    display:flex;
+    position: absolute;
+    margin-top: -185px;
     background-color: rgb(245, 119, 119);
     color: rgb(62, 1, 1);
+    font-weight: bolder;
     border: solid 2px rgb(62, 1, 1);
     border-radius: 15px;
-    width: 250px;
+    opacity: 65%;
+    width: 285px;
 }
 
 .hide{
@@ -40,6 +46,6 @@
 }
 
 .notificationText{
-    text-align: center;
+    margin-left: 5px;
     margin-top: 0px;
 }

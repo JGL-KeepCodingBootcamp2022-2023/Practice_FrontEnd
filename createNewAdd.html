@@ -42,38 +42,37 @@
     <section class="spinnerHere"></section>
     <div class="createAddForm">
         <h1>Do you want to buy somthing?<br>
-            Or to sell something?</h1>
+            To sell something, maybe?</h1>
         <form id="createAddForm">
 
-            <label for="userAvatar">Avatar</label>
-            <input type="url" name="userAvatar" id="userAvatar" value="https://cdn-icons-png.flaticon.com/512/194/194938.png">
+            <label for="addName" class="tittle">Producto:</label>
+            <input type="text" id="addName" name="addName" required><br>
+
+            <label for="addPhoto" class="tittle">Foto del producto:</label>
+            <input type="url" id="addPhoto" name="addPhoto"><br>
             
-            <label for="addName" class="tittle">Producto</label>
-            <input type="text" id="addName" name="addName" required>
+            <!-- <label for="addTag" class="tittle">Tag</label>
+            <input type="text" id="addTag" name="addTag"> <br> -->
             
+            <label for="addDescription">Descripción del producto:</label><br>
+            <textarea name="addDescription" id="addDescription" class="tittle" cols="30" rows="10" required>Describe aquí tu producto</textarea><br>
             
-            <label for="addSelect" class="tittle">¿Compras o vendes?</label>
+            <label for="addSelect" class="tittle">Este artículo se:</label>
             <select name="addSelect" id="addSelect"> 
                     <option value="vende" selected>Se vende</option>
                     <option value="busca">Se busca</option>
             </select>
             
-            <label for="addPrice" class="tittle">Precio</label>
-            <input type="tel" id="addPrice" name="addPrice" minlength="1" size="10" required> (Mínimo 1 €).
             
-            <label for="addPhoto" class="tittle">Foto del producto</label>
-            <input type="url" id="addPhoto" name="addPhoto">
-            
-            <label for="addTag" class="tittle">Tag</label>
-            <input type="text" id="addTag" name="addTag">
-            
-            <label for="addDescription">Descripción del producto</label>
-            <textarea name="addDescription" id="addDescription" class="tittle" cols="30" rows="10" required>Describe aquí tu producto</textarea>
-            
+            <label for="addPrice" class="tittle">por:</label><br>
+            <h2 class="productData"><input type="tel" id="addPrice" name="addPrice" minlength="1" size="10" required></h2>
+            <p class="minPrice">(Mínimo 1 €)</p>
+           
             <div class="buttonsArea">
-            <button type="submit" id="submit" class="buttons">Create Add</button>
-            <button type="reset" id="reset" class="buttons">Reset Info</button>
+                <button type="submit" id="submit" class="buttons">Create Add</button>
+                <button type="reset" id="reset" class="buttons">Reset Info</button>
             </div>
+
         </form>
     </div>
     <section class="notifications"></section>

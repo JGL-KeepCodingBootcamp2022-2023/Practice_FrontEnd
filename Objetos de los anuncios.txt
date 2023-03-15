@@ -8,9 +8,6 @@
   ],
   "products": [
     {
-            "id": 1,
-            "username": "NombreUsuario",
-            "avatar": "https://amzucapacitacion.com/wp-content/uploads/2021/06/72cd969f8e21be3476277d12d44c791c.png",
             "name": "Bicicleta Playmobil",
             "sale": true,
             "price": 230.15,
@@ -19,12 +16,9 @@
                 "Lifestyle",
                 "Motor"
             ],
-            "description": "Réplica exacta de bicileta de Playmobil. Hecho con plático duro del de antes. Colorada, como las buenas bicis. No trae persona artificial de Playmobil. NO te puedes subir a ella, que se rompe."
+            "description": "Réplica exacta de bicicleta de Playmobil. Hecho con plático duro, del de antes. Colorada, como las buenas bicis. No trae persona artificial de Playmobil. NO te puedes subir a ella, que se rompe."
         },
         {
-            "id": 2,
-            "username": "NombreUsuario",
-            "avatar": "https://cdn-icons-png.flaticon.com/512/194/194938.png",
             "name": "iPhone 3GS",
             "sale": true,
             "price": 50,
@@ -33,12 +27,9 @@
                 "Lifestyle",
                 "Mobile"
             ],
-            "description": "Teléfono móvil más bien pequeño. Si tienes la mano como una hogaza de pan de pueblo y/o los dedos porrúos, no lo compres, que le das a tdos los botones al mismo tiempo. Va como un tiro, si todavía usas Windows'95. 80 GB de almacenamiento interno (canon digital incluído en el precio). La i es de incompatible, por eso de la honestidad publicitaria y esas cositas"
+            "description": "Teléfono móvil más bien pequeño. Si tienes la mano como una hogaza de pan de pueblo y/o los dedos porrúos, no lo compres, que le das a todos los botones al mismo tiempo. Va como un tiro, si todavía usas Windows'95. 80 GB de almacenamiento interno (canon digital incluído en el precio). La 'i' es de incompatible, por eso de la honestidad publicitaria y esas cositas."
         },
         {
-            "id": 3,
-            "username": "NombreUsuario",
-            "avatar": "https://confecoop.coop/wp-content/uploads/2019/03/10_avatar-512.png",
             "name": "Boli Bic",
             "sale": true,
             "price": 1,
@@ -49,9 +40,6 @@
             "description": "Cuerpo hexagonal de plástico transparente con identificador del color de la tinta en el capuchón y parte trasera. Punta fina (Bic cristal, escribe normal...). Color: azul. Bueno es tranparente, pero la tinta es azul."
         },
         {
-            "id": 4,
-            "username": "NombreUsuario",
-            "avatar": "https://amzucapacitacion.com/wp-content/uploads/2021/06/avatar-4.png",
             "name": "Latigo de Indiana Jones",
             "sale": false,
             "price": 50,
@@ -63,9 +51,6 @@
             "description": "El látigo de Indiana Jones es un arma y herramienta que utiliza en muchas de sus aventuras.Ess un artículo de colección hecho de curpiel, que suena a calidad de la buena. Mide 268cm y contabiliza 568 latigazos bien dados. No viene con Indiana Jones"
         },
         {
-            "id": 5,
-            "username": "NombreUsuario",
-            "avatar": "Avatar",
             "name": "i-Pod 7ª Generación",
             "sale": true,
             "price": 122.5,
@@ -76,9 +61,7 @@
             "description": "Auténtico reproductor multimedia, ya que puedes tener dentro de tu ipod, audio, imagen, videos e incluso juegos, por eso tiene mucha más capacidad de almacenamiento (160GB con canon digital incluído en el precio). La i es de incompatible, por eso de la honestidad publicitaria y esas cositas. Mejor que el i-phone 3 ese que se vende por ahí. "
         },
         {
-            "id": 6,
-            "username": "NombreUsuario",
-            "avatar": "Avatar",
+
             "name": "Halcón Callejero, El",
             "sale": false,
             "price": 9999.99,
@@ -90,9 +73,6 @@
             "description": "Moto con motor turbo, de color negro azabache, con sistema de hiperpresión que puede autopropulsarla a 30 metros por el aire, con una velocidad tremenda de más de 450 km/h y una suspensión hidráulica que la adapta tanto a las calles como al campo. El Halcón Callejero es un arma de ataque, con un cañón de rayos láser que puede neutralizar dejar sin sentido e inmovilizar a cualquier posible adversario. ITV sin pasar. Etiqueta C. Se puede pintar en rosa Fuxia si quieres-"
         },
         {
-            "id": 7,
-            "username": "paoma@casa.es",
-            "avatar": "Avatar",
             "name": "Parches para bicicleta de Playmobil",
             "sale": true,
             "price": 10.25,

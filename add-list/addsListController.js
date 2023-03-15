@@ -4,32 +4,30 @@ import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js'
 
 
-export async function addsListController(addListElement, spinnerElement) {
+export async function addsListController(addListElement, spinnerElement, notificationsElement) {
     //Ruleta de carga
-    //addListElement.classList.replace('adds-list', 'spinnerView')
     spinnerElement.innerHTML = buildSpinnerView(spinnerElement); 
     let adds = [];
-     
+    
     try {
         adds = await getAdds();
-
-        //dispatchCustomEvent({ isError: false, message: 'Los anuncios se han cargado correctamente' }, addListElement)
         
         if (adds.length >0) {
             
             drawAdds(adds, addListElement) 
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Los anuncios se han cargado correctamente');
+            notificationsElement.classList.add('goodNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading adds');
             console.log(statusAddsList)
             
         } else {
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hay anuncios disponibles, todavía...');
-            //dispatchCustomEvent({isError: true, message: 'No hay anuncios disponibles, todavía...' }, addListElement)
+            notificationsElement.classList.add('badNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No adds yet. Sorry!');
         }
     } catch (err) {
+        notificationsElement.classList.add('badNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'No hemos podido cargar los anuncios. Inténtelo de nuevo más tarde.')
         
     }finally {
-        //addListElement.classList.replace('spinnerView', 'adds-list')
         hideSpinner(spinnerElement)
     }
 }
@@ -41,10 +39,4 @@ function drawAdds(adds, addListElement) {
     }
 }
 
-/*function dispatchCustomEvent(details, addListElement){
-    const event = new CustomEvent('newNotification', {
-        detail: details
-    })
 
-    addListElement.dispatchEvent(event)                     //Lanza el evento customizado que hemos creado
-}*/

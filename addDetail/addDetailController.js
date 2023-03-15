@@ -31,10 +31,12 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                 
                 if(add.userId === userInfo.userId) {
                     deleteButtonElement.addEventListener('click', async () => {
+                        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
                         const answer = confirm('¿Está segur@ de que desea borrar el anuncio?')
                         if(answer){
+                    
                             await deleteAdd(add.id)
-                            spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+                            
                             //TODO NOTIFICATION GOOD
                             hideSpinner(spinnerElement)
                             window.location = '/'

@@ -11,7 +11,8 @@ export function signupController(signupElement, spinnerElement) {
     const emailElement = signupElement.querySelector('#username');
     const passwordElement = signupElement.querySelector('#password');
     const passwordConfirmElement = signupElement.querySelector('#passwordConfirm');
-    signupElement.buildSpinnerView(signupElement)
+    
+    spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
 
     if (isMailValid(emailElement.value) &&
         isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
@@ -26,7 +27,7 @@ export function signupController(signupElement, spinnerElement) {
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, error.message)
 
           }finally{
-            hideSpinner(signupElement)
+            hideSpinner(spinnerElement)
           }
     }
   })
@@ -34,8 +35,10 @@ export function signupController(signupElement, spinnerElement) {
 function isPasswordValid(password, passwordConfirmation) {
   if (password !== passwordConfirmation) {
 
-      pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Las contraseñas no son iguales')
-      return false
+    spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+    pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Las contraseñas no son iguales')
+    hideSpinner(spinnerElement)
+    return false
   }
 
   return true

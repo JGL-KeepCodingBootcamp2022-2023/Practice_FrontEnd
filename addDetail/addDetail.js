@@ -1,3 +1,5 @@
+export let deleteResponse = 0;
+export let getAddResponse = 0;
 export const getAddById = async (addId) => {
     const response = await fetch(`http://localhost:8000/api/products/${addId}`)
 
@@ -5,7 +7,7 @@ export const getAddById = async (addId) => {
     if(!response.ok) {
         throw new Error('El anuncio solicitado no existe')
     }
-
+    getAddResponse = response.status
     const add = await response.json()
 
     return add
@@ -21,4 +23,6 @@ export const deleteAdd = async (addId) => {
             "Authorization": `Bearer ${token}`,
         }
     })
+
+    deleteResponse = response.status
 }
