@@ -1,6 +1,8 @@
 import { decodeToken } from '../utils/decodeToken.js'
 import { buildSpinnerView } from '../utils/SpinnerView.js';
+import { sayHello } from './sayHello.js';
 import { buildGreeting, buildGreeting2 } from './userActionView.js'
+
 
 export function userActionsController(userActionsElement, spinnerElement) {
   const token = localStorage.getItem('token')
@@ -24,21 +26,11 @@ export function userActionsController(userActionsElement, spinnerElement) {
       localStorage.removeItem('token');
       window.location.reload();
     })
-    
-    sayHello(userActionsElement, payload)
 
   } else {
     const createAddLinkElement = userActionsElement.querySelector('#createNewAddLink')
     createAddLinkElement.remove()
     closeSessionElement.remove()
-  }
-
-  function sayHello(userActionsElement, payload){
-      const helloElement = userActionsElement.querySelector('#hello')
-      helloElement.appendChild(buildGreeting2(payload.username));
-      setTimeout(() => {
-        helloElement.innerHTML = '';
-      }, 3500)
   }
 
 }

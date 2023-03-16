@@ -2,6 +2,8 @@ import { pubSub } from '../pubSub.js';
 import { isMailValid } from '../utils/isMailValid.js'
 import { loginUser } from './login.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
+import { decodeToken } from '../utils/decodeToken.js'
+import { sayHello } from '../userActions/sayHello.js';
 
 
 export function loginController(loginElement, spinnerElement, notificationsElement) {
@@ -36,9 +38,17 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             const jwt = await loginUser(username, password);
             localStorage.setItem('token', jwt)
             
+            const token = localStorage.getItem('token')
+            const payload = decodeToken(token);
+            const userActionsElement = document.querySelector('.userActions')
+            
             notificationsElement.classList.add('goodNotifications')
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Login successful')
-            window.location = '/'
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, `Login successful.`)
+            
+            sayHello(userActionsElement, payload)
+
+
+            setTimeout(() => window.location = '/' , 5000)
             
         } catch (error) {
             notificationsElement.classList.add('badNotifications')
