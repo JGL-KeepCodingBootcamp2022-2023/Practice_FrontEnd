@@ -7,28 +7,28 @@
     padding: 0.5rem;
     height: 500px;
   }
-  .productName {
-    text-align: center;
-  }
-  .add img {
-    object-fit: cover;
-    width: fit-content;
-    height: 150px;
-  }
+.productName {
+  text-align: center;
+}
+.add img {
+  object-fit: cover;
+  width: fit-content;
+  height: 150px;
+}
 
-  .productData h2{
-    display: inline-block;
-    margin-left: auto;
-    padding: 5px;
-    border-style: dashed;
-    border-radius: 5px;
-    color: darkred;
-  }
+.productData h2{
+  display: inline-block;
+  margin-left: auto;
+  padding: 5px;
+  border-style: dashed;
+  border-radius: 5px;
+  color: darkred;
+}
 
-  #isSale {
-    font-weight: bold; 
-    text-transform: uppercase;
-  }
+#isSale {
+  font-weight: bold; 
+  text-transform: uppercase;
+}
 
 .typeTag {
   font-weight: bold;
@@ -48,4 +48,8 @@
   font-style: italic;
 }
 
+.notifications {
+  margin-left: 10%;
+  margin-top: -10%;
+}
   

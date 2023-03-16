@@ -12,6 +12,7 @@
   <link href="css/navbar.css" rel="stylesheet">
   <link href="css/spinner.css" rel="stylesheet">
   <link href="login/login.css" rel="stylesheet">
+  <link href="css/buttons.css" rel="stylesheet">
   <link href="notifications/notificationStyle.css" rel="stylesheet">
 
   <title>Login</title>
@@ -27,11 +28,15 @@
         </div>
     </div>
   </header>
-  <section>
+  <section class="userActions">
     <div class = "navbar">
       <a href="/" id="backHome">Home</a>
-      <a href="/" id="signupLink">Signup</a>
+      <a href="/createNewAdd.html" id="createNewAddLink" class="buttons">Create A New Add</a>
+      <a href="/login.html" id="loginLink">Login</a>
+      <a href="/signup.html" id="signupLink">SignUp</a>
+      <button id="closeSession" class="buttons">Close Session</button>
     </div>
+    <div id="hello"></div>
   </section>
   <section class="spinnerHere"></section>
   <div class="infoContainer">
@@ -48,12 +53,11 @@
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" minlength="6" required><br>
 
-        <button type="submit">Login</button><br>
+        <button class="buttons" id="loginButton" type="submit">Login</button><br>
       </form>
       <section id="spinner"></section>
     </div>
   </div>
-  <div id="hello"></div>
   <section class="notifications"></section> 
   
   <script type="module" src="./login/index.js"></script>

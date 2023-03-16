@@ -12,7 +12,7 @@
     margin: 0;
 }
 
-#submit, #reset, #deleteAdd {
+#submit, #reset, #deleteAdd, #loginButton {
     border-radius: 5px;
     border: 2px solid rgb(210, 156, 5);
 }

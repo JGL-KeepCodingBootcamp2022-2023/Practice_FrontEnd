@@ -18,13 +18,14 @@ export function userActionsController(userActionsElement, spinnerElement) {
 
     loggedElement.appendChild(buildGreeting(payload.username));
     
-    sayHello(userActionsElement, payload)
-
+    
     closeSessionElement.addEventListener('click', () => {
       spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
       localStorage.removeItem('token');
       window.location.reload();
     })
+    
+    sayHello(userActionsElement, payload)
 
   } else {
     const createAddLinkElement = userActionsElement.querySelector('#createNewAddLink')
