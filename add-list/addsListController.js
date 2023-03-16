@@ -25,7 +25,7 @@ export async function addsListController(addListElement, spinnerElement, notific
         
     } catch (err) {
         notificationsElement.classList.add('badNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Unable to load the ads. Please try again later.')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Unable to load ads. Please try again later.')
         
     }finally {
         hideSpinner(spinnerElement)
