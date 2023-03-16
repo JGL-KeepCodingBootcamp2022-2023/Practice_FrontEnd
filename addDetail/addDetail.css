@@ -4,12 +4,10 @@
 }
 
 .add{
-    
     border: solid 2px beige;
     border-radius: 25px;
     margin: 10px;
-    width: 80%;
-    
+    width: 80%; 
 }
 
 .userInfo{
@@ -73,4 +71,8 @@
     border-style: dashed;
     border-radius: 5px;
     color: darkred;
+}
+
+.notifications {
+    margin-left: 10%;
 }
