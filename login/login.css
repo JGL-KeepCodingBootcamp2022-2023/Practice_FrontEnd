@@ -41,10 +41,12 @@ button {
 }
 
 .leftSide {
+    display: block;
     text-align: center;
 }
 
 #textLogin {
+    width: 100%;
     font-style: oblique;
     text-decoration: underline;
 }
@@ -53,14 +55,17 @@ button {
     padding-top: 10px;
     margin-left: 25px;
 }
+
 a {
     text-decoration: none;
     font-style: italic;
 }
+
 a:visited {
     text-decoration: none;
     color: rgb(210, 156, 5);
 }
+
 a:active {
     color: rgb(227, 201, 129);
 }

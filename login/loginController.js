@@ -11,11 +11,8 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
     const userActionsElement = document.querySelector('.userActions')
     const token = localStorage.getItem('token')
 
-
-    if(token) {
-       
-        closeSessionBeforeElement.innerHTML = closeSessionBefore()
-       
+    if(token) {   
+        closeSessionBeforeElement.innerHTML = closeSessionBefore() 
     }
 
     loginElement.addEventListener('submit', (event) => {
@@ -46,7 +43,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             const jwt = await loginUser(username, password);
             localStorage.setItem('token', jwt)
             
-            //const token = localStorage.getItem('token')
+            const token = localStorage.getItem('token')
             const payload = decodeToken(token);
             const userActionElement = userActionsElement
             notificationsElement.classList.add('goodNotifications')
@@ -55,7 +52,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             sayHello(userActionElement, payload)
             
             
-            setTimeout(() => window.location = '/' , 5000)
+            setTimeout(() => window.location = '/' , 3500)
             
         } catch (error) {
             notificationsElement.classList.add('badNotifications')
