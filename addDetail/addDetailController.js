@@ -5,7 +5,8 @@ import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
 export async function addDetailController(addDetailElement, addId, spinnerElement, notificationsElement, userActionsElement) {  
-        try {
+        
+    try {
             spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
 
             const add = await getAddById(addId);
@@ -52,8 +53,9 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
         }
     
     const token = localStorage.getItem('token')
+    
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
-    closeSessionElement.addEventListener('click', () => {
+    closeSessionElement.addEventListener('click', (spinnerElement) => {
         spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         localStorage.removeItem('token')
         notificationsElement.classList.replace('hide', 'goodNotifications')

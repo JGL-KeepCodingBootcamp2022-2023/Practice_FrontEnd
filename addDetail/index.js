@@ -20,4 +20,4 @@ if (!addId) {                       //Validation that addId exists
 }
 
 notificationController(notificationsElement);
-userActionsController(userActionsElement);
+userActionsController(userActionsElement, spinnerElement);

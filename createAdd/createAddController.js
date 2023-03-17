@@ -46,9 +46,14 @@ export const createAddController = (createAddFormElement, spinnerElement, notifi
         }
     })
     
+    
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
-    closeSessionElement.addEventListener('click', () => {
+    closeSessionElement.addEventListener('click', (spinnerElement) => {
+        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         localStorage.removeItem('token')
+        notificationsElement.classList.replace('hide', 'goodNotifications')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
+        hideSpinner(spinnerElement)
         window.location.reload()
       })
 }
