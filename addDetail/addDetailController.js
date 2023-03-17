@@ -19,7 +19,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
 
     } catch (error) {
         notificationsElement.classList.add('badNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, `Unable to load the ad.Please try again later.`)
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, `${error}`)
 
     }finally{
         hideSpinner(spinnerElement)

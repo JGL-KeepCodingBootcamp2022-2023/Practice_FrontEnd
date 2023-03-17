@@ -5,7 +5,7 @@ export const getAddById = async (addId) => {
 
     //Gestión del error
     if(!response.ok) {
-        throw new Error('El anuncio solicitado no existe')
+        throw new Error("Ad doesn't exist")
     }
     getAddResponse = response.status
     const add = await response.json()
