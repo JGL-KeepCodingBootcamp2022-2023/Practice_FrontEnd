@@ -8,5 +8,5 @@ const spinnerElement = document.querySelector('.spinnerHere')
 const userActionsElement = document.querySelector('.userActions')
 
 notificationController(notificationElement)
-loginController(loginElement, spinnerElement, notificationElement, userActionsElement)
+loginController(loginElement, spinnerElement, notificationElement)
 userActionsController(userActionsElement, spinnerElement);   
