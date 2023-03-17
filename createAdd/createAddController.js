@@ -45,14 +45,14 @@ export const createAddController = (createAddFormElement, spinnerElement, notifi
         }
     })
     
-    const closeSessionElement = userActionsElement.querySelector('#closeSession')
-    closeSessionElement.addEventListener('click', (spinnerElement) => {
-        //spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+    const closeSessionElement = document.querySelector('#closeSession')
+    closeSessionElement.addEventListener('click', () => {
+        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+        
         localStorage.removeItem('token')
         notificationsElement.classList.add('goodNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        //hideSpinner(spinnerElement)
-        window.location.reload()
+        setTimeout (() => window.location.reload(), 3500 )
         })
 
 }

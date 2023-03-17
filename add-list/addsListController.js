@@ -38,8 +38,7 @@ export async function addsListController(addListElement, spinnerElement, notific
         localStorage.removeItem('token')
         notificationsElement.classList.replace('hide', 'goodNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        hideSpinner(spinnerElement)
-        window.location.reload()
+        setTimeout (() => window.location.reload(), 3500 )
         })
 }
 

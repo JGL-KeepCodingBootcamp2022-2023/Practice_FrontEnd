@@ -1,3 +1,6 @@
+.notifications {
+    margin-left: 10%;
+}
 .addDetail {
     display: flex;
     justify-content: center;
@@ -71,8 +74,4 @@
     border-style: dashed;
     border-radius: 5px;
     color: darkred;
-}
-
-.notifications {
-    margin-left: 10%;
 }
