@@ -1,0 +1,73 @@
+.editAdForm {
+    display: block;
+    text-align: center;
+  }
+  
+  #editAdForm {
+      display: block;
+      text-align: center;
+      border: solid 2px beige;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+  input, textarea, label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .productName {
+    text-align: center;
+  }
+  .add img {
+    object-fit: cover;
+    width: fit-content;
+    height: 150px;
+  }
+  
+  .productData{
+    display: inline-block;
+    margin-left: auto;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-style: dashed;
+    border-radius: 5px;
+    color: darkred;
+  }
+  
+  .inputPrice{
+    text-align: center;
+  }
+  
+  .minPrice {
+    font-size: small;
+    margin-bottom: 15px;
+  }
+  
+  .typeTag {
+  font-weight: bold;
+  }
+  
+  .typeTag span {
+  font-weight: initial;
+  }
+  
+  .buttonsArea {
+    margin-top: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  #editDescription {
+    font-weight: normal;
+  }
+  
+  .notifications {
+    display: flex;
+    position: absolute;
+    margin-right: 2%;
+  }

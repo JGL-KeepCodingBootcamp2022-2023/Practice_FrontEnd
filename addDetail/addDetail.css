@@ -75,3 +75,8 @@
     border-radius: 5px;
     color: darkred;
 }
+
+.editButton {
+    text-align: left;
+    text-decoration: none;
+}

@@ -25,9 +25,15 @@ export function buildAddDetail(product, user) {
                 <div class = "typeTag">
             </div>
         </div>
-        <div class="deleteButton">
-        <button id="deleteAdd" class="buttons">Delete Add</button>
-        </div
+        <div userButoons>
+            <div class="deleteButton">
+                <button id="deleteAdd" class="buttons">Delete Ad</button>
+            </div>
+            <div class="editButton">
+            <a href="editAd.html?addId=${product.id}" id="editAd" class="buttons">Edit Ad</a>
+            </div>
+        <div>
+        
     </div>
 `
 }

@@ -1,4 +1,4 @@
-export let statusCreateAdd = 0;
+
 export async function createAdd(addAvatar, addName, addSelect, addPrice, addPhoto, addDescription) {
   const token = localStorage.getItem('token')
  
@@ -21,7 +21,7 @@ export async function createAdd(addAvatar, addName, addSelect, addPrice, addPhot
         },
         body: JSON.stringify(newAdd)
       })
-      statusCreateAdd = response.status
+
     //Gestión de la respuesta
     if (!response.ok) {
         throw new Error('Error creating add')
