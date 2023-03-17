@@ -65,3 +65,9 @@ label {
 #addDescription {
   font-weight: normal;
 }
+
+.notifications {
+  display: flex;
+  position: absolute;
+  margin-right: 2%;
+}

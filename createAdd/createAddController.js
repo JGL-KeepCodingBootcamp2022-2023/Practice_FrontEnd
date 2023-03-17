@@ -2,9 +2,8 @@ import { createAdd } from './createAdd.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export const createAddController = (createAddFormElement, spinnerElement, notificationsElement) => {
+export const createAddController = (createAddFormElement, spinnerElement, notificationsElement, userActionsElement) => {
     
-    //capturar el submit
     createAddFormElement.addEventListener('submit', async (event) => {
         event.preventDefault();
         
@@ -46,7 +45,7 @@ export const createAddController = (createAddFormElement, spinnerElement, notifi
         }
     })
     
-    const closeSessionElement = document.querySelector('#closeSession')
+    const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', (spinnerElement) => {
         //spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         localStorage.removeItem('token')
