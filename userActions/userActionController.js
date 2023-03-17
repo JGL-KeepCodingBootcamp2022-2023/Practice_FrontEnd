@@ -1,10 +1,9 @@
 import { decodeToken } from '../utils/decodeToken.js'
 import { buildSpinnerView } from '../utils/SpinnerView.js';
-import { sayHello } from './sayHello.js';
-import { buildGreeting, buildGreeting2 } from './userActionView.js'
+import { buildGreeting } from './userActionView.js'
 
 
-export function userActionsController(userActionsElement, spinnerElement) {
+export function userActionsController(userActionsElement) {
   const token = localStorage.getItem('token')
   
   const closeSessionElement = userActionsElement.querySelector('#closeSession')
@@ -21,10 +20,13 @@ export function userActionsController(userActionsElement, spinnerElement) {
     loggedElement.appendChild(buildGreeting(payload.username));
     
     
-    closeSessionElement.addEventListener('click', () => {
+    closeSessionElement.addEventListener('click', (spinnerElement) => {
       spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-      localStorage.removeItem('token');
-      window.location.reload();
+      localStorage.removeItem('token')
+      notificationsElement.classList.replace('hide', 'goodNotifications')
+      pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
+      hideSpinner(spinnerElement)
+      setTimeout (() => window.location.reload(), 3500);
     })
 
   } else {
