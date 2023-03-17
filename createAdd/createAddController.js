@@ -46,6 +46,7 @@ export const createAddController = (createAddFormElement, spinnerElement, notifi
         }
     })
     
+    
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', (spinnerElement) => {
         spinnerElement.innerHTML = buildSpinnerView(spinnerElement)

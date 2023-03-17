@@ -52,7 +52,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
             }
         }
     
-    //const token = localStorage.getItem('token')
+    const token = localStorage.getItem('token')
     
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', (spinnerElement) => {
