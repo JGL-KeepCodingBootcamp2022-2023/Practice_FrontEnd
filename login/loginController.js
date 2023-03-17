@@ -4,10 +4,20 @@ import { loginUser } from './login.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { decodeToken } from '../utils/decodeToken.js'
 import { sayHello } from '../userActions/sayHello.js';
+import { closeSessionBefore } from './loginView.js';
 
 
-export function loginController(loginElement, spinnerElement, notificationsElement) {
+export function loginController(loginElement, spinnerElement, notificationsElement, closeSessionBeforeElement) {
     const userActionsElement = document.querySelector('.userActions')
+    const token = localStorage.getItem('token')
+
+
+    if(token) {
+       
+        closeSessionBeforeElement.innerHTML = closeSessionBefore()
+       
+    }
+
     loginElement.addEventListener('submit', (event) => {
         event.preventDefault();
         
@@ -17,7 +27,6 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
         spinnerElement.innerHTML = buildSpinnerView(spinnerElement);
               
         if (!isMailValid(emailElement.value)) {
-
             notificationsElement.classList.add('badNotifications')
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The e-mail address entered is incorrect')
             hideSpinner(spinnerElement)
@@ -37,7 +46,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             const jwt = await loginUser(username, password);
             localStorage.setItem('token', jwt)
             
-            const token = localStorage.getItem('token')
+            //const token = localStorage.getItem('token')
             const payload = decodeToken(token);
             const userActionElement = userActionsElement
             notificationsElement.classList.add('goodNotifications')
@@ -57,6 +66,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             
         }
     }
+
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
         spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
