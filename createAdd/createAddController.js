@@ -2,7 +2,7 @@ import { createAdd } from './createAdd.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export const createAddController = (createAddFormElement, spinnerElement, notificationsElement, userActionsElement) => {
+export const createAddController = (createAddFormElement, spinnerElement, notificationsElement) => {
     
     //capturar el submit
     createAddFormElement.addEventListener('submit', async (event) => {
@@ -46,14 +46,14 @@ export const createAddController = (createAddFormElement, spinnerElement, notifi
         }
     })
     
-    
-    const closeSessionElement = userActionsElement.querySelector('#closeSession')
+    const closeSessionElement = document.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', (spinnerElement) => {
         //spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         localStorage.removeItem('token')
-        notificationsElement.classList.replace('hide', 'goodNotifications')
+        notificationsElement.classList.add('goodNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
         //hideSpinner(spinnerElement)
         window.location.reload()
         })
+
 }

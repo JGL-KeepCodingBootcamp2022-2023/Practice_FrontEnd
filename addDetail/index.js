@@ -12,7 +12,7 @@ const addId = params.get('addId');
 
 if (!addId) {                       //Validation that addId exists  
     //TODO BAD NOTIFICATION
-    alert('Anuncio no existe')
+    alert("Ad doesn't exist")
     window.location = '/'
 }else {
     const addDetailElement = document.querySelector('.addDetail');
@@ -20,4 +20,4 @@ if (!addId) {                       //Validation that addId exists
 }
 
 notificationController(notificationsElement);
-userActionsController(userActionsElement, spinnerElement);
+userActionsController(userActionsElement, spinnerElement, userActionsElement);

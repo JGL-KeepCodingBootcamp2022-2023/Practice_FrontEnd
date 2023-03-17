@@ -40,7 +40,6 @@ export async function addsListController(addListElement, spinnerElement, notific
         //hideSpinner(spinnerElement)
         window.location.reload()
         })
-
 }
 
 function drawAdds(adds, addListElement) {                   

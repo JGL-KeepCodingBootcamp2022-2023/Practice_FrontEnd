@@ -6,7 +6,7 @@ import { decodeToken } from '../utils/decodeToken.js'
 import { sayHello } from '../userActions/sayHello.js';
 
 
-export function loginController(loginElement, spinnerElement, notificationsElement) {
+export function loginController(loginElement, spinnerElement, notificationsElement, userActionsElement) {
     
     loginElement.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -27,11 +27,10 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
         }
     })
     
-    async function logUser(loginElement, notificationsElement, spinnerElement) {
+    async function logUser(loginElement, notificationsElement, spinnerElement, userActionsElement) {
         const formData = new FormData(loginElement);
         const username = formData.get('username');
-        const password = formData.get('password');
-        
+        const password = formData.get('password');        
         
         try {
             
@@ -40,14 +39,13 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             
             const token = localStorage.getItem('token')
             const payload = decodeToken(token);
-            const userActionsElement = document.querySelector('.userActions')
             
             notificationsElement.classList.add('goodNotifications')
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, `Login successful.`)
             
             sayHello(userActionsElement, payload)
-
-
+            
+            
             setTimeout(() => window.location = '/' , 5000)
             
         } catch (error) {
@@ -58,6 +56,15 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             hideSpinner(spinnerElement)
             
         }
-
     }
+    const closeSessionElement = userActionsElement.querySelector('#closeSession')
+    
+    closeSessionElement.addEventListener('click', (spinnerElement) => {
+        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+        localStorage.removeItem('token')
+        notificationsElement.classList.add('goodNotifications')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
+        hideSpinner(spinnerElement)
+        window.location.reload()
+        })
 }
