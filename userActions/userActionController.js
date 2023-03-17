@@ -20,14 +20,14 @@ export function userActionsController(userActionsElement) {
     loggedElement.appendChild(buildGreeting(payload.username));
     
     
-    closeSessionElement.addEventListener('click', (spinnerElement) => {
+    /*closeSessionElement.addEventListener('click', (spinnerElement) => {
       spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
       localStorage.removeItem('token')
-      notificationsElement.classList.replace('hide', 'goodNotifications')
+      notificationsElement.classList.remove('hide')
       pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
       hideSpinner(spinnerElement)
       setTimeout (() => window.location.reload(), 3500);
-    })
+    })*/
 
   } else {
     const createAddLinkElement = userActionsElement.querySelector('#createNewAddLink')

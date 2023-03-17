@@ -56,11 +56,11 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
     
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', (spinnerElement) => {
-        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+        //spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         localStorage.removeItem('token')
         notificationsElement.classList.replace('hide', 'goodNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        hideSpinner(spinnerElement)
+        //hideSpinner(spinnerElement)
         window.location.reload()
         })
 }
