@@ -63,7 +63,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             
         }
     }
-
+    
     const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
         spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
