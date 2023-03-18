@@ -82,6 +82,6 @@ To make it easier, these are the users and their IDs to work with the ads:
 - papasconchoco@muricas.si - ID: 2
 - paoma@casa.es - ID: 3
 - ertiti@decai.ole - ID: 4
--javielus@keepcoder.es - ID: 5
+- javielus@keepcoder.es - ID: 5
 
 The passwords for all of them is: 123456.
