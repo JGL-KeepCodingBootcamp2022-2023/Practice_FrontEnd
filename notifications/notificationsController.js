@@ -8,8 +8,7 @@ export function notificationController(notificationsElement) {
         notificationsElement.innerHTML = buildNotificationsView(message)
 
         setTimeout (() => {
-            notificationsElement.classList.add('hide')
-            notificationsElement.innerHTML =  ''
+            closeNotificationWindow(notificationsElement)
         }, 5000);
 
         const closeNotification = notificationsElement.querySelector('#closeNotification')
@@ -24,6 +23,8 @@ export function notificationController(notificationsElement) {
 }
 
 function closeNotificationWindow(notificationsElement){
+    notificationsElement.classList.remove('goodNotifications')
+    notificationsElement.classList.remove('badNotifications')
     notificationsElement.classList.add('hide')
     notificationsElement.innerHTML = '';
 }

@@ -1,9 +1,9 @@
-import { addDetailController } from './adDetailController.js'
+import { adDetailController } from './adDetailController.js'
 import { notificationController } from '../notifications/notificationsController.js'
 import { userActionsController } from '../userActions/userActionController.js';
 import { buildSpinnerView} from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
-import { } from './editAdControler.js'
+import { editAdController } from './editAdController.js'
 
 const userActionsElement = document.querySelector('.userActions')
 const spinnerElement = document.querySelector('.spinnerHere')
@@ -20,8 +20,12 @@ if (!addId) {                       //Validation that addId exists
     setTimeout(() => window.location = '/', 3500) 
 
 }else {
+    
     const editAdDetailElement = document.querySelector('.addDetail');
-    addDetailController(editAdDetailElement, addId, spinnerElement, notificationsElement, userActionsElement)
+    const editAdFormElement = document.querySelector('.editAdForm')
+    editAdController(editAdFormElement, spinnerElement, notificationsElement)
+    adDetailController(editAdDetailElement, addId, spinnerElement, notificationsElement, userActionsElement)
+
 }
 
 notificationController(notificationsElement);

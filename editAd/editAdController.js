@@ -2,7 +2,7 @@ import { editAd } from "./editAd.js";
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export function editAdControler() {
+export function editAdController(editAdFormElement, spinnerElement, notificationsElement) {
     editAdFormElement.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -24,7 +24,25 @@ export function editAdControler() {
         const editPrice = formData.get('editPrice');
         const editPhoto = formData.get('editPhoto');
         const editDescription = formData.get('editDescription');
-        //const editTag = formData.get('editTag');
+        /*let tags = formData.get('editTag');
+        let editTag = tags.split(',')*/
+
+        try {
+
+            spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+            await editAd(editAvatar, editName, editSelect, editPrice,editPhoto, editDescription)
+            
+            notificationsElement.classList.add('goodNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Ad successfully edited.')
+            window.location = '/'
+
+        } catch (error) {
+            notificationsElement.classList.add('badNotifications')
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The advertisement could not be edited')
+
+        }finally {
+            hideSpinner(spinnerElement)
+        }
     })
 
 }

@@ -4,7 +4,7 @@ import { decodeToken } from '../utils/decodeToken.js';
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
 
-export async function addDetailController(addDetailElement, addId, spinnerElement, notificationsElement, userActionsElement) {  
+export async function adDetailController(addDetailElement, addId, spinnerElement, notificationsElement, userActionsElement) {  
     const token = localStorage.getItem('token')
         
     try {
@@ -15,6 +15,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
 
         notificationsElement.classList.add('goodNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading ad');
+        
 
     } catch (error) {
         notificationsElement.classList.add('badNotifications')
@@ -22,6 +23,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
 
     }finally{
         hideSpinner(spinnerElement)
+        
     }
 
    
