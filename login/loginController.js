@@ -9,6 +9,7 @@ import { closeSessionBefore } from './loginView.js';
 
 export function loginController(loginElement, spinnerElement, notificationsElement, closeSessionBeforeElement) {
     const userActionsElement = document.querySelector('.userActions')
+    const loggedUser = document.querySelector('.leftSide')
     const token = localStorage.getItem('token')
 
     if(token) {   
@@ -27,6 +28,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             notificationsElement.classList.add('badNotifications')
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The e-mail address entered is incorrect')
             hideSpinner(spinnerElement)
+            windows.location.reload()
         }
         else {
             logUser(loginElement, notificationsElement, spinnerElement);               
@@ -57,15 +59,32 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
         } catch (error) {
             notificationsElement.classList.add('badNotifications')
             pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Could not perform logging. Please try again later.')
-            
+            windows.location.reload()
+
         }finally{
             hideSpinner(spinnerElement)
             
         }
     }
     
-    const closeSessionElement = userActionsElement.querySelector('#closeSession')
+    closeSession(userActionsElement, spinnerElement, notificationsElement)
+
+    closeSession(loggedUser, spinnerElement, notificationsElement)
+
+    /*const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
+        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
+        localStorage.removeItem('token')
+        notificationsElement.classList.add('goodNotifications')
+        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
+        setTimeout (() => window.location.reload(), 3500 )
+        })*/
+}
+
+function closeSession (element, spinnerElement, notificationsElement){
+    const closeSessionElement = element.querySelector('.closeSessions')
+    closeSessionElement.addEventListener('click', () => {
+        
         spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         localStorage.removeItem('token')
         notificationsElement.classList.add('goodNotifications')

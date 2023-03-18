@@ -1,3 +1,3 @@
 export function closeSessionBefore() {
-return `<p>Please, <button id="closeSession" class="buttons">Close Session</button> before login again`
+return `<p>Please, <button id="closeSessions" class="buttons closeSessions">Close Session</button> before login again.`
 }
