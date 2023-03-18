@@ -14,7 +14,8 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
     const token = localStorage.getItem('token')
 
     if(token) {   
-        closeSessionBeforeElement.innerHTML = closeSessionBefore() 
+        closeSessionBeforeElement.innerHTML = closeSessionBefore()
+         
     }
 
     loginElement.addEventListener('submit', (event) => {
@@ -70,6 +71,5 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
     
     closeSession(spinnerElement, notificationsElement)
 
-    //closeSession(loggedUser, spinnerElement, notificationsElement)
 
 }

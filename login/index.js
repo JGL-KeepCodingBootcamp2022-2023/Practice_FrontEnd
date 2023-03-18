@@ -7,7 +7,7 @@ const loginElement = document.querySelector('#logUser')
 const notificationElement = document.querySelector('.notifications')
 const spinnerElement = document.querySelector('.spinnerHere')
 const userActionsElement = document.querySelector('.userActions')
-const closeSessionBeforeElement = document.querySelector('.leftSide')
+const closeSessionBeforeElement = document.querySelector('.infoContainer')
 
 notificationController(notificationElement)
 loginController(loginElement, spinnerElement, notificationElement, closeSessionBeforeElement)

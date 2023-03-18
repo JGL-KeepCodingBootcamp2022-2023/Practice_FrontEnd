@@ -10,6 +10,12 @@ button {
     margin-left: 10px;
 }
 
+.tittle {
+text-align: center;
+font-style: oblique;
+text-decoration: underline;
+}
+
 .infoContainer {
     border: solid 1px rgb(247, 211, 66);
     border-radius: 15px;
@@ -47,6 +53,19 @@ button {
 .textCreateUser {
     font-style: oblique;
     text-decoration: underline;
+}
+
+.closeSessionBefore{
+    text-align: right;
+    margin-right: -130px;
+}
+
+#closeSessions {
+    color: rgb(210, 156, 5);
+    font-family: 'Ananda', 'Ananda Black';
+    font-weight: bolder;
+    font-style: oblique;
+    font-size: x-large;
 }
 
 #createUser {   
