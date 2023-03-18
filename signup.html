@@ -11,6 +11,7 @@
   <link href="css/header.css" rel="stylesheet">
   <link href="css/navbar.css" rel="stylesheet">
   <link href="css/spinner.css" rel="stylesheet">
+  <link href="css/buttons.css" rel="stylesheet">
   <link href="notifications/notificationStyle.css" rel="stylesheet">
   <link href="signup/signup.css" rel="stylesheet">
   <title>Sign up</title>
@@ -27,9 +28,8 @@
     </div>
   </header>
   
-  <section class="userActions">
-    <navbar>
-      <div class = "navbar">
+  <navbar>
+    <div class = "navbar">
         <a href="/" id="backHome">Home</a>
         <a href="/login.html" id="loginLink">Login</a>
       </div>
@@ -55,11 +55,13 @@
         <label for="passwordConfirm">Password confirm:</label>
         <input type="password" name="password-confirm" id="passwordConfirm" minlength="6" required><br>
 
-        <button type="submit">Create user</button><br>
+        <button type="submit" class="buttons" id="signupButton">Create user</button><br>
       </form>
       <section class="notifications"></section>
     </div>
   </div>
+  <section class="userActions">
+  
   <script type="module" src="./signup/index.js"></script>
 </body>
 </html>

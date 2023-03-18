@@ -76,7 +76,7 @@
     color: darkred;
 }
 
-.editButton {
-    text-align: left;
+#editAd {
     text-decoration: none;
+    font-weight: normal;
 }

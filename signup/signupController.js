@@ -16,15 +16,17 @@ export function signupController(signupElement, spinnerElement) {
 
     if (isMailValid(emailElement.value) &&
         isPasswordValid(passwordElement.value, passwordConfirmElement.value)) {
+          
           try {
             await createUser(emailElement.value, passwordElement.value)
             signupElement.reset();
-
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Usuario creado correctamente')
+            
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'User created successfully.')
             window.location = '/'
             
           } catch (error) {
-            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, error.message)
+            
+            pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'It was not possible to create a user. Please try again later.')
 
           }finally{
             hideSpinner(spinnerElement)
@@ -36,7 +38,7 @@ function isPasswordValid(password, passwordConfirmation) {
   if (password !== passwordConfirmation) {
 
     spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-    pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Las contraseñas no son iguales')
+    pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Passwords must be the same.')
     hideSpinner(spinnerElement)
     return false
   }
@@ -44,6 +46,3 @@ function isPasswordValid(password, passwordConfirmation) {
   return true
   }
 }
-    
-    
-    

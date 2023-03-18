@@ -5,36 +5,36 @@ Welcome to AlaPop!
 # Install Node-JS
 Download from https://nodejs.org/es/download and select your OS:
 
-    - WINDOWS:
-    Download Windows Installer file (.msi). Execute it and follow intructions.
-    Then, open a cmd windows and type
+- WINDOWS:
+Download Windows Installer file (.msi). Execute it and follow intructions.
+Then, open a cmd windows and type
 
-    ```sh
-    Node --version
-    ```
-    and
+```sh
+Node --version
+```
+and
 
-    ```sh
-    npm --version
-    ```
+```sh
+npm --version
+```
 
-    If all is OK, versions of Node JS will be returned.
+If all is OK, versions of Node JS will be returned.
 
 
-    - MAC-OS:
-    Download MAC Installer file (.pkg). Find the dowmloaded file in download folder, execute it and follow intructions.
-    For verify, open a terminal and type
+- MAC-OS:
+Download MAC Installer file (.pkg). Find the dowmloaded file in download folder, execute it and follow intructions.
+For verify, open a terminal and type
 
-    ```sh
-    Node --version
-    ```
+```sh
+Node --version
+```
 
-    and 
+and 
 
-    ```sh
-    npm --version
-    ```
-    If all is OK, versions of Node JS and npm will be returned.
+```sh
+npm --version
+```
+If all is OK, versions of Node JS and npm will be returned.
 
 # Install API-REST
 
@@ -78,9 +78,10 @@ A new window with AlaPop Homepage will be open in your default browser.
 
 To make it easier, these are the users and their IDs to work with the ads:
 
-    - paneteforever@esecadi.ole. ID: 1
-    - papasconchoco@muricas.si. ID: 2
-    - paoma@casa.es. ID: 3
-    - ertiti@decai.ole. ID: 4
+- paneteforever@esecadi.ole - ID: 1
+- papasconchoco@muricas.si - ID: 2
+- paoma@casa.es - ID: 3
+- ertiti@decai.ole - ID: 4
+-javielus@keepcoder.es - ID: 5
 
 The passwords for all of them is: 123456.

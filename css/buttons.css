@@ -12,7 +12,7 @@
     margin: 0;
 }
 
-#submit, #reset, #deleteAdd, #loginButton {
+#submit, #reset, #deleteAdd, #loginButton, #signupButton, #editAd {
     border-radius: 5px;
     border: 2px solid rgb(210, 156, 5);
 }
@@ -25,7 +25,12 @@
     font-weight: bold;
 }
 
-.deleteButton {
+#deleteAdd{
     display: flex;
-    justify-content: right;
+    float: right;
+}
+
+#editAd {
+    display: flex;
+    float: left;
 }

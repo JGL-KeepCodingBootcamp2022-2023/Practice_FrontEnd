@@ -12,7 +12,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
 
         const add = await getAddById(addId);
         addDetailElement.innerHTML = buildAddDetail(add);
-        handleDeleteAddButton(addDetailElement, add);
+        handleEditAndDeleteAdButton(addDetailElement, add);
 
         notificationsElement.classList.add('goodNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'Successful loading ad');
@@ -25,13 +25,15 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
         hideSpinner(spinnerElement)
     }
 
-    function handleDeleteAddButton(addDetailElement, add)  {
+    function handleEditAndDeleteAdButton(addDetailElement, add)  {
         const token = localStorage.getItem('token');
         const deleteButtonElement = addDetailElement.querySelector('#deleteAdd');
+        const editButtonElement = addDetailElement.querySelector('#editAd')
         
 
         if(!token) {
             deleteButtonElement.remove();
+            editButtonElement.remove();
             
         }else{
             const userInfo = decodeToken(token);
@@ -45,9 +47,9 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                         await deleteAdd(add.id)
                         notificationsElement.classList.toggle('goodNotifications')
                         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The ad has been successfully deleted');
-                        hideSpinner(spinnerElement)
                         window.location = '/'
                     }
+                    hideSpinner(spinnerElement)
                 })                
             }else{
                 deleteButtonElement.remove();
