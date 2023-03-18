@@ -45,7 +45,7 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                     if(answer){
                 
                         await deleteAdd(add.id)
-                        notificationsElement.classList.toggle('goodNotifications')
+                        notificationsElement.classList.replace('hide', 'goodNotifications')
                         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, 'The ad has been successfully deleted');
                         window.location = '/'
                     }
@@ -53,6 +53,8 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
                 })                
             }else{
                 deleteButtonElement.remove();
+                editButtonElement.remove();
+
             }
         }
     }

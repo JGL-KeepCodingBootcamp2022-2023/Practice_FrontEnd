@@ -10,6 +10,9 @@ const userActionsElement = document.querySelector('.userActions')
 const spinnerElement = document.querySelector('.spinnerHere')
 const notificationsElement = document.querySelector('.notifications');
 
+notificationController(notificationsElement);
+userActionsController(userActionsElement);
+
 if(!token) {                    //Refuse acces to createAdd webpage without login
     
     spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
@@ -22,7 +25,5 @@ if(!token) {                    //Refuse acces to createAdd webpage without logi
     createAddController(createAddFormElement, spinnerElement, notificationsElement, userActionsElement)
 };
 
-notificationController(notificationsElement);
-userActionsController(userActionsElement);
 
 
