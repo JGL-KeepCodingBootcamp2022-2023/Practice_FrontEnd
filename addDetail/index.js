@@ -14,7 +14,7 @@ const addId = params.get('addId');
 
 if (!addId) {                       //Validation that addId exists  
     spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-    notificationsElement.classList.add('baddNotifications')
+    notificationsElement.classList.add('badNotifications')
     pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, "Ad doesn't exist");
     setTimeout(() => window.location = '/', 3500) 
 
