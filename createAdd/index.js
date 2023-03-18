@@ -11,7 +11,6 @@ const spinnerElement = document.querySelector('.spinnerHere')
 const notificationsElement = document.querySelector('.notifications');
 
 notificationController(notificationsElement);
-userActionsController(userActionsElement);
 
 if(!token) {                    //Refuse acces to createAdd webpage without login
     
@@ -25,5 +24,6 @@ if(!token) {                    //Refuse acces to createAdd webpage without logi
     createAddController(createAddFormElement, spinnerElement, notificationsElement, userActionsElement)
 };
 
+userActionsController(userActionsElement);
 
 
