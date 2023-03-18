@@ -2,6 +2,7 @@ import { getAdds } from './adds.js'
 import { buildAddView } from './addsView.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js'
+import { closeSession } from '../utils/closeSession.js';
 
 
 export async function addsListController(addListElement, spinnerElement, notificationsElement) {
@@ -30,8 +31,9 @@ export async function addsListController(addListElement, spinnerElement, notific
     }finally {
         hideSpinner(spinnerElement)
     }
-
-    const closeSessionElement = document.querySelector('#closeSession')
+    
+    closeSession (spinnerElement, notificationsElement)
+    /*const closeSessionElement = document.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
         spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
         
@@ -39,7 +41,7 @@ export async function addsListController(addListElement, spinnerElement, notific
         notificationsElement.classList.replace('hide', 'goodNotifications')
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
         setTimeout (() => window.location.reload(), 3500 )
-        })
+        })*/
 }
 
 function drawAdds(adds, addListElement) {                   

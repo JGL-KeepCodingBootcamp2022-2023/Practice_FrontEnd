@@ -5,6 +5,7 @@ import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { decodeToken } from '../utils/decodeToken.js'
 import { sayHello } from '../userActions/sayHello.js';
 import { closeSessionBefore } from './loginView.js';
+import { closeSession } from '../utils/closeSession.js'
 
 
 export function loginController(loginElement, spinnerElement, notificationsElement, closeSessionBeforeElement) {
@@ -67,9 +68,9 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
         }
     }
     
-    closeSession(userActionsElement, spinnerElement, notificationsElement)
+    closeSession(spinnerElement, notificationsElement)
 
-    closeSession(loggedUser, spinnerElement, notificationsElement)
+    //closeSession(loggedUser, spinnerElement, notificationsElement)
 
     /*const closeSessionElement = userActionsElement.querySelector('#closeSession')
     closeSessionElement.addEventListener('click', () => {
@@ -81,7 +82,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
         })*/
 }
 
-function closeSession (element, spinnerElement, notificationsElement){
+/*function closeSession (element, spinnerElement, notificationsElement){
     const closeSessionElement = element.querySelector('.closeSessions')
     closeSessionElement.addEventListener('click', () => {
         
@@ -91,4 +92,4 @@ function closeSession (element, spinnerElement, notificationsElement){
         pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
         setTimeout (() => window.location.reload(), 3500 )
         })
-}
+}*/
