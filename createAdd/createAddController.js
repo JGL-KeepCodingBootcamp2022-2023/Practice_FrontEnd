@@ -1,6 +1,8 @@
 import { createAdd } from './createAdd.js'
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
+import { closeSession } from '../utils/closeSession.js';
+
 
 export const createAddController = (createAddFormElement, spinnerElement, notificationsElement) => {
     
@@ -45,14 +47,6 @@ export const createAddController = (createAddFormElement, spinnerElement, notifi
         }
     })
     
-    const closeSessionElement = document.querySelector('#closeSession')
-    closeSessionElement.addEventListener('click', () => {
-       
-        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-        localStorage.removeItem('token')
-        notificationsElement.classList.add('goodNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        setTimeout (() => window.location.reload(), 3500 )
-        })
+    closeSession(spinnerElement, notificationsElement)
 
 }

@@ -55,7 +55,7 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
             sayHello(userActionElement, payload)
             
             
-            setTimeout(() => window.location = '/' , 3500)
+            setTimeout(() => window. history. back() , 3500)
             
         } catch (error) {
             notificationsElement.classList.add('badNotifications')
@@ -72,24 +72,4 @@ export function loginController(loginElement, spinnerElement, notificationsEleme
 
     //closeSession(loggedUser, spinnerElement, notificationsElement)
 
-    /*const closeSessionElement = userActionsElement.querySelector('#closeSession')
-    closeSessionElement.addEventListener('click', () => {
-        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-        localStorage.removeItem('token')
-        notificationsElement.classList.add('goodNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        setTimeout (() => window.location.reload(), 3500 )
-        })*/
 }
-
-/*function closeSession (element, spinnerElement, notificationsElement){
-    const closeSessionElement = element.querySelector('.closeSessions')
-    closeSessionElement.addEventListener('click', () => {
-        
-        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-        localStorage.removeItem('token')
-        notificationsElement.classList.add('goodNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        setTimeout (() => window.location.reload(), 3500 )
-        })
-}*/

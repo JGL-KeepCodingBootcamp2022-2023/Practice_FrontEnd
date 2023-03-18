@@ -33,15 +33,6 @@ export async function addsListController(addListElement, spinnerElement, notific
     }
     
     closeSession (spinnerElement, notificationsElement)
-    /*const closeSessionElement = document.querySelector('#closeSession')
-    closeSessionElement.addEventListener('click', () => {
-        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-        
-        localStorage.removeItem('token')
-        notificationsElement.classList.replace('hide', 'goodNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        setTimeout (() => window.location.reload(), 3500 )
-        })*/
 }
 
 function drawAdds(adds, addListElement) {                   

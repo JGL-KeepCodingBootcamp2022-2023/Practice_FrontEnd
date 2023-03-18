@@ -3,6 +3,8 @@ import { buildAddDetail } from './addDetailView.js';
 import { decodeToken } from '../utils/decodeToken.js';
 import { buildSpinnerView, hideSpinner } from '../utils/SpinnerView.js';
 import { pubSub } from '../pubSub.js';
+import { closeSession } from '../utils/closeSession.js';
+
 
 export async function addDetailController(addDetailElement, addId, spinnerElement, notificationsElement, userActionsElement) {  
     const token = localStorage.getItem('token')
@@ -59,15 +61,6 @@ export async function addDetailController(addDetailElement, addId, spinnerElemen
         }
     }
     
-    
-    const closeSessionElement = userActionsElement.querySelector('#closeSession')
-    closeSessionElement.addEventListener('click', () => {
-        spinnerElement.innerHTML = buildSpinnerView(spinnerElement)
-        localStorage.removeItem('token')
-        notificationsElement.classList.replace('hide', 'goodNotifications')
-        pubSub.publish(pubSub.TOPICS.SHOW_NOTIFICATION, ' Successful logout')
-        setTimeout (() => window.location.reload(), 3500 )
-        
-        })
+    closeSession (spinnerElement, notificationsElement)
         
 }
